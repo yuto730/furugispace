@@ -1,0 +1,51 @@
+<header>
+  <div class="header">
+    <div class="header_1">
+      <div>
+        <form action="cgi-bin/example.cgi" method="post">
+          <input class="search" type="search" name="search" placeholder="キーワードを入力">
+          <input class="submit" type="submit" name="submit" value="検索">
+        </form>
+      </div>
+      <ul class="header_icon">
+        <li><%= image_tag "icon_fb.png" %></li>
+        <li><%= image_tag "icon_tw.png" %></li>
+        <li><%= image_tag "icon_line.png" %></li>
+        <li><%= image_tag "icon_inst.png" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="header_2">
+    <div class="header_logo">
+      <%= link_to(root_path) do %>
+        <h1>FurugiSpace<h1>
+      <% end %>
+    </div>
+    <div class="header_if">
+      <%= link_to(root_path) do %>
+        <div class="registration">
+          <div class="registration_box">
+            <%= image_tag "edit.png" %><br>
+            <span>会員登録</span>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to(root_path) do %>
+        <div class="login">
+          <div class="login_box">
+            <%= image_tag "user.png" %><br>
+            <span>ログイン</span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <nav id="header_nav">
+    <ul class="header_nav">
+      <li><%= link_to '古着ニュース', root_path %></li>
+      <li><%= link_to '古着イベント', root_path %></li>
+      <li><%= link_to '古着コミュニティ', root_path %></li>
+      <li><%= link_to '古着コーディネート', root_path %></li>
+    </ul>
+  </nav>
+</header>

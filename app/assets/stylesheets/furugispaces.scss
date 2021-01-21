@@ -1,3 +1,99 @@
 // Place all the styles related to the furugispaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ヘッダー */
+header{
+  .header{
+    background-color: #FF9D30;
+    .header_1{
+      width: 1200px;
+      margin: 0 auto;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      .search{
+        background-color: #fff;
+        padding: 10px;
+        width: 560px;
+        border-radius: 20px;
+      }
+      .submit{
+        background-color: #fff;
+        padding: 10px 25px;
+        border-radius: 20px;
+      }
+      .header_icon{
+        display: flex;
+        li{
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+  .header_2{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0 20px;
+    display: flex;
+    align-items: center;
+    .header_logo{
+      font-size: 36px;
+      color: #FF9D30;
+      margin: 0 auto;
+      padding-left: 146px;
+    }
+    .header_if{
+      display: flex;
+      .registration{
+        color: #FF9D30;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        border: 1px solid #FF9D30;
+        margin-right: 10px;
+        text-align: center;
+        .registration_box{
+          padding-top: 12px;
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+      .login{
+        background-color: #FF9D30;
+        color: #fff;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        border: 1px solid #FF9D30;
+        text-align: center;
+        .login_box{
+          padding-top: 12px;
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  #header_nav{
+    border-bottom: 1px solid #FF9D30;
+    .header_nav{
+      width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: center;
+      li:first-child{
+        border-left: 1px solid #c7c7c7;
+      }
+      li{
+        border-right: 1px solid #c7c7c7;
+        padding: 0 50px;
+      }
+      li:hover{
+        color: #FF9D30;
+      }
+    }
+  }
+}
