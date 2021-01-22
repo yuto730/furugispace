@@ -139,25 +139,26 @@ header{
   }
   .news_more{
     width: 320px;
-    padding: 16px 0;
+    height: 52px;
     border: 1px solid #FF9D30;
     border-radius: 40px;
     text-align: center;
     margin: 60px auto 0;
     a{
       display: block;
+      padding: 15px 0;
       font-size: 16px;
       color: #FF9D30;
     }
   }
-  // .news_more:hover{
-  //   background-color: #FF9D30;
-  //   transition: 0.3s;
-  //   a:hover{
-  //     color: #fff;
-  //     transition: 0.3s;
-  //   }
-  // }
+  .news_more:hover{
+    background-color: #FF9D30;
+    transition: 0.3s;
+    a:hover{
+      color: #fff;
+      transition: 0.3s;
+    }
+  }
 }
 
 /* TOP_古着イベント */
@@ -201,25 +202,26 @@ header{
   }
   .event_more{
     width: 320px;
-    padding: 16px 0;
+    height: 52px;
     border: 1px solid #FF9D30;
     border-radius: 40px;
     text-align: center;
     margin: 60px auto 0;
     a{
       display: block;
+      padding: 15px 0;
       font-size: 16px;
       color: #FF9D30;
     }
   }
-  // .event_more:hover{
-  //   background-color: #FF9D30;
-  //   transition: 0.3s;
-  //   a:hover{
-  //     color: #fff;
-  //     transition: 0.3s;
-  //   }
-  // }
+  .event_more:hover{
+    background-color: #FF9D30;
+    transition: 0.3s;
+    a:hover{
+      color: #fff;
+      transition: 0.3s;
+    }
+  }
 }
 
 /* TOP_古着コミュニティ */
@@ -262,25 +264,26 @@ header{
   }
   .community_more{
     width: 320px;
-    padding: 16px 0;
+    height: 52px;
     border: 1px solid #FF9D30;
     border-radius: 40px;
     text-align: center;
     margin: 60px auto 0;
     a{
       display: block;
+      padding: 15px 0;
       font-size: 16px;
       color: #FF9D30;
     }
   }
-  // .community_more:hover{
-  //   background-color: #FF9D30;
-  //   transition: 0.3s;
-  //   a:hover{
-  //     color: #fff;
-  //     transition: 0.3s;
-  //   }
-  // }
+  .community_more:hover{
+    background-color: #FF9D30;
+    transition: 0.3s;
+    a:hover{
+      color: #fff;
+      transition: 0.3s;
+    }
+  }
 }
 
 /* TOP_古着コーディネート */
@@ -325,23 +328,83 @@ header{
   }
   .coordination_more{
     width: 320px;
-    padding: 16px 0;
+    height: 52px;
     border: 1px solid #FF9D30;
     border-radius: 40px;
     text-align: center;
     margin: 60px auto 0;
     a{
       display: block;
+      padding: 15px 0;
       font-size: 16px;
       color: #FF9D30;
     }
   }
-  // .coordination_more:hover{
-  //   background-color: #FF9D30;
-  //   transition: 0.3s;
-  //   a:hover{
-  //     color: #fff;
-  //     transition: 0.3s;
-  //   }
-  // }
+  .coordination_more:hover{
+    background-color: #FF9D30;
+    transition: 0.3s;
+    a:hover{
+      color: #fff;
+      transition: 0.3s;
+    }
+  }
+}
+
+/* フッター */
+footer{
+  background-color: #FF9D30;
+  .footer{
+    width: 1200px;
+    margin: 80px auto 0;
+    .footer_top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      h1{
+        font-size: 38px;
+        color: #fff;
+      }
+      .footer_icon{
+        display: flex;
+        li{
+          padding-right: 8px;
+        }
+      }
+    }
+    .footer_bottom{
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 20px;
+      #footer_nav{
+        .footer_nav{
+          display: flex;
+          .nav_list{
+            margin-right: 80px;
+            color: #fff;
+            span{
+              font-size: 18px;
+            }
+            ul{
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      #footer_list{
+        li{
+          margin-bottom: 15px;
+          color: #fff;
+        }
+      }
+    }
+  }
+  #copyright{
+    background-color: #fff;
+    .copyright{
+      padding: 15px 0 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
 }
