@@ -97,3 +97,251 @@ header{
     }
   }
 }
+
+/* TOP_古着ニュース */
+.news{
+  width: 1200px;
+  margin: 80px auto 0;
+  h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .news_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .news_box{
+      width: 270px;
+      margin: 30px 15px 0;
+      .news_img{
+        img{
+          width: 270px;
+          height: 180px;
+          object-fit: cover;
+        }
+      }
+      .news_info{
+        p{
+          margin-top: 10px;
+          font-size: 12px;
+          color: #FF9D30;
+        }
+        h3{
+          margin: 12px 0;
+          font-size: 18px;
+        }
+        time{
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .news_more{
+    width: 320px;
+    padding: 16px 0;
+    border: 1px solid #FF9D30;
+    border-radius: 40px;
+    text-align: center;
+    margin: 60px auto 0;
+    a{
+      display: block;
+      font-size: 16px;
+      color: #FF9D30;
+    }
+  }
+  // .news_more:hover{
+  //   background-color: #FF9D30;
+  //   transition: 0.3s;
+  //   a:hover{
+  //     color: #fff;
+  //     transition: 0.3s;
+  //   }
+  // }
+}
+
+/* TOP_古着イベント */
+.event{
+  width: 1200px;
+  margin: 80px auto 0;
+  h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .event_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .event_box{
+      width: 270px;
+      margin: 30px 15px 0;
+      .event_img{
+        img{
+          width: 270px;
+          height: 180px;
+          object-fit: cover;
+        }
+      }
+      .event_info{
+        p{
+          margin-top: 10px;
+          font-size: 12px;
+          color: #FF9D30;
+        }
+        h3{
+          margin: 12px 0;
+          font-size: 18px;
+        }
+        time{
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .event_more{
+    width: 320px;
+    padding: 16px 0;
+    border: 1px solid #FF9D30;
+    border-radius: 40px;
+    text-align: center;
+    margin: 60px auto 0;
+    a{
+      display: block;
+      font-size: 16px;
+      color: #FF9D30;
+    }
+  }
+  // .event_more:hover{
+  //   background-color: #FF9D30;
+  //   transition: 0.3s;
+  //   a:hover{
+  //     color: #fff;
+  //     transition: 0.3s;
+  //   }
+  // }
+}
+
+/* TOP_古着コミュニティ */
+.community{
+  width: 1200px;
+  margin: 80px auto 0;
+  h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .community_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .community_box{
+      width: 270px;
+      margin: 30px 15px 0;
+      .community_img{
+        position: relative;
+        display: block;
+        img{
+          width: 270px;
+          height: 220px;
+          object-fit: cover;
+        }
+        .community_info{
+          padding: 50px 10px 20px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          z-index: 2;
+          border-radius: 0 0 10px 10px;
+          background: linear-gradient(to bottom,transparent,rgba(30, 30, 30, 0.7) 30%,rgba(30, 30, 30, 0.7));
+          h3{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .community_more{
+    width: 320px;
+    padding: 16px 0;
+    border: 1px solid #FF9D30;
+    border-radius: 40px;
+    text-align: center;
+    margin: 60px auto 0;
+    a{
+      display: block;
+      font-size: 16px;
+      color: #FF9D30;
+    }
+  }
+  // .community_more:hover{
+  //   background-color: #FF9D30;
+  //   transition: 0.3s;
+  //   a:hover{
+  //     color: #fff;
+  //     transition: 0.3s;
+  //   }
+  // }
+}
+
+/* TOP_古着コーディネート */
+.coordination{
+  width: 1200px;
+  margin: 80px auto 0;
+  h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .coordination_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .coordination_box{
+      width: 270px;
+      margin: 30px 15px 0;
+      .coordination_img{
+        img{
+          width: 270px;
+          height: 180px;
+          object-fit: cover;
+        }
+      }
+      .coordination_info{
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        h3{
+          margin: 12px 0;
+          font-size: 18px;
+        }
+        time{
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+        p{
+          margin-top: 15px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .coordination_more{
+    width: 320px;
+    padding: 16px 0;
+    border: 1px solid #FF9D30;
+    border-radius: 40px;
+    text-align: center;
+    margin: 60px auto 0;
+    a{
+      display: block;
+      font-size: 16px;
+      color: #FF9D30;
+    }
+  }
+  // .coordination_more:hover{
+  //   background-color: #FF9D30;
+  //   transition: 0.3s;
+  //   a:hover{
+  //     color: #fff;
+  //     transition: 0.3s;
+  //   }
+  // }
+}
