@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <div class="header_if">
-      <%= link_to(root_path) do %>
+      <%= link_to(new_user_registration_path) do %>
         <div class="registration">
           <div class="registration_box">
             <%= image_tag "edit.png" %><br>
@@ -30,7 +30,7 @@
           </div>
         </div>
       <% end %>
-      <%= link_to(root_path) do %>
+      <%= link_to(new_user_session_path) do %>
         <div class="login">
           <div class="login_box">
             <%= image_tag "user.png" %><br>
@@ -42,7 +42,7 @@
   </div>
   <nav id="header_nav">
     <ul class="header_nav">
-      <li><%= link_to '古着ニュース', root_path %></li>
+      <li><%= link_to '古着ニュース', notice_furugispaces_path %></li>
       <li><%= link_to '古着イベント', root_path %></li>
       <li><%= link_to '古着コミュニティ', root_path %></li>
       <li><%= link_to '古着コーディネート', root_path %></li>

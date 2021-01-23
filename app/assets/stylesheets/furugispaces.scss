@@ -118,6 +118,8 @@ header{
           width: 270px;
           height: 180px;
           object-fit: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
         }
       }
       .news_info{
@@ -181,21 +183,24 @@ header{
           width: 270px;
           height: 180px;
           object-fit: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
         }
       }
       .event_info{
-        p{
-          margin-top: 10px;
-          font-size: 12px;
-          color: #FF9D30;
-        }
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
         h3{
           margin: 12px 0;
           font-size: 18px;
         }
         time{
           margin-bottom: 10px;
-          font-size: 12px;
+          font-size: 14px;
+        }
+        p{
+          margin-top: 15px;
+          font-size: 14px;
         }
       }
     }
@@ -246,6 +251,7 @@ header{
           width: 270px;
           height: 220px;
           object-fit: cover;
+          border-radius: 10px;
         }
         .community_info{
           padding: 50px 10px 20px;
@@ -302,26 +308,25 @@ header{
       width: 270px;
       margin: 30px 15px 0;
       .coordination_img{
+        position: relative;
+        display: block;
         img{
           width: 270px;
-          height: 180px;
+          height: 220px;
           object-fit: cover;
+          border-radius: 10px;
         }
-      }
-      .coordination_info{
-        border-bottom: 1px solid #333;
-        padding-bottom: 20px;
-        h3{
-          margin: 12px 0;
-          font-size: 18px;
-        }
-        time{
-          margin-bottom: 10px;
-          font-size: 14px;
-        }
-        p{
-          margin-top: 15px;
-          font-size: 14px;
+        .coordination_info{
+          padding: 50px 10px 20px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          z-index: 2;
+          border-radius: 0 0 10px 10px;
+          background: linear-gradient(to bottom,transparent,rgba(30, 30, 30, 0.7) 30%,rgba(30, 30, 30, 0.7));
+          h3{
+            color: #fff;
+          }
         }
       }
     }
@@ -407,4 +412,35 @@ footer{
       font-size: 14px;
     }
   }
+}
+
+/* 古着ニュース */
+#pagination{
+  text-align: center;
+}
+.pagination span{
+  display: inline-block;
+  margin: 0 3px;
+  padding: 10px 14px;
+  border: 1px solid #A7A7A7;
+  border-radius: 50%;
+}
+.pagination span:first-child{
+  margin-right: 10px;
+  padding: 10px 18px;
+  border-radius: 20px !important;
+}
+.pagination span:last-child{
+  margin-left: 10px;
+  padding: 10px 18px;
+  border-radius: 20px !important;
+}
+.pagination span:hover{
+  background-color: #A7A7A7;
+  color: #fff;
+  transition: 0.2s;
+}
+.pagination .current{
+  background-color: #A7A7A7;
+  color: #fff;
 }
