@@ -24,7 +24,7 @@
 | user_id               | string | null: false | <!-- ユーザーid -->
 | email                 | string | null: false | <!-- メールアドレス -->
 | password_confirmation | string | null: false | <!-- パスワード -->
-| user_profile          | text   | null: false | <!-- ユーザープロフィール -->
+| user_profile          | text   |             | <!-- ユーザープロフィール -->
 
 ### Association
 - has_many :coordinations
@@ -61,6 +61,16 @@
 - belongs_to :store
 
 
+## communities テーブル
+| Column            | Type   | Options     |
+| ----------------- | ------ | ----------- |
+| community_title   | string | null: false | <!-- コミュニティ名 -->
+| community_profile | text   | null: false | <!-- コミュニティプロフィール -->
+
+### Association
+- belongs_to :user
+
+
 ## coordinations テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
@@ -76,16 +86,6 @@
 | necklace | string |             | <!-- ネックレス -->
 | bracelet | string |             | <!-- ブレスレット -->
 | ring     | string |             | <!-- 指輪 -->
-
-### Association
-- belongs_to :user
-
-
-## communities テーブル
-| Column            | Type   | Options     |
-| ----------------- | ------ | ----------- |
-| community_title   | string | null: false | <!-- コミュニティ名 -->
-| community_profile | text   | null: false | <!-- コミュニティプロフィール -->
 
 ### Association
 - belongs_to :user
