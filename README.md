@@ -10,7 +10,7 @@
 | address               | string | null: false | <!-- 住所 -->
 | building              | string |             | <!-- 建物名 -->
 | phone_number          | string | null: false | <!-- 電話番号 -->
-| store_profile         | text   | null: false | <!-- 店舗プロフィール -->
+| store_profile         | text   |             | <!-- 店舗プロフィール -->
 
 ### Association
 - has_many :notices

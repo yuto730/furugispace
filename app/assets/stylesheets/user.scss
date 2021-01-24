@@ -1,0 +1,50 @@
+.user_login{
+  width: 1200px;
+  margin: 80px auto 0;
+  h2{
+    font-size: 30px;
+    text-align: center;
+  }
+  form{
+    width: 590px;
+    margin: 30px 0 0 auto;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+    padding: 40px 0;
+    .login_title{
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .field{
+      width: 360px;
+      margin: 0 auto 15px;
+      padding: 8px 0 8px 10px;
+      border: 1px solid #BFBFBF;
+      border-radius: 5px;
+    }
+    .actions{
+      width: 200px;
+      margin: 30px auto 0;
+      padding: 15px 0;
+      background-color: #FF9D30;
+      border-radius: 30px;
+      text-align: center;
+      input{
+        color: #fff;
+      }
+    }
+  }
+}
+.user_new{
+  width: 420px;
+  margin: 60px auto;
+  padding: 20px 0;
+  background-color: #FF9D30;
+  border-radius: 30px;
+  text-align: center;
+  a{
+    display: block;
+    color: #fff;
+  }
+}
