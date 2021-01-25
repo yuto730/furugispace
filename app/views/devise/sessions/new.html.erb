@@ -7,23 +7,23 @@
     <div class="login_title">
       <h3>ユーザーログイン</h3>
     </div>
-    <div class="field">
+    <div class="user_login_field">
       <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
     </div>
 
-    <div class="field">
+    <div class="user_login_field">
       <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "ログイン" %>
+    <div class="user_login_actions">
+      <%= f.submit "ログイン", class: "user_login_submit"  %>
     </div>
   <% end %>
 </div>
 
 <%#= render "devise/shared/links" %>
-<div class="user_new">
-  <%= link_to(new_user_registration_path) do %>
+<div id="user_new">
+  <%= link_to(new_user_registration_path, class: 'user_new_link') do %>
     <span>新規会員登録する</span>
   <% end %>
 </div>
