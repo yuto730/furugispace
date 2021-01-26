@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+
+<div class="store_login">
+  <h2>店舗ログイン</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="store_login_field">
+      <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
+    </div>
+
+    <div class="store_login_field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード" %>
+    </div>
+
+    <div class="store_login_actions">
+      <%= f.submit "ログイン", class: "store_login_submit"  %>
+    </div>
+  <% end %>
+</div>
+
+<%#= render "devise/shared/links" %>
+
+<%= render "shared/footer" %>

@@ -22,22 +22,8 @@
       <% end %>
     </div>
     <div class="header_if">
-      <%= link_to(new_user_registration_path) do %>
-        <div class="registration">
-          <div class="registration_box">
-            <%= image_tag "edit.png" %><br>
-            <span>会員登録</span>
-          </div>
-        </div>
-      <% end %>
-      <%= link_to(new_user_session_path) do %>
-        <div class="login">
-          <div class="login_box">
-            <%= image_tag "user.png" %><br>
-            <span>ログイン</span>
-          </div>
-        </div>
-      <% end %>
+      <%= react_component("Registration") %>
+      <%= react_component("Session") %>
     </div>
   </div>
   <nav id="header_nav">

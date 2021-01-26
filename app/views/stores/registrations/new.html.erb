@@ -1,0 +1,52 @@
+<%= render "shared/header" %>
+
+<div class="store_new">
+  <h2>店舗新規会員登録</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%#= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="store_new_field">
+      <label>店舗名<span>必須</span></label>
+      <%= f.text_field :store_nickname, autofocus: true, placeholder: "お名前", autocomplete: "email" %>
+    </div>
+
+    <div class="store_new_field">
+      <label>メールアドレス<span>必須</span></label>
+      <%= f.email_field :email, autofocus: true, placeholder: "例)example@example.com", autocomplete: "email" %>
+    </div>
+
+    <div class="store_new_field">
+      <label>パスワード<span>必須</span></label>
+      <%= f.password_field :password, placeholder: "半角英数6文字以上", autocomplete: "new-password" %>
+    </div>
+
+    <div class="store_new_field">
+      <label>パスワードの確認<span>必須</span></label>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="store_new_field">
+      <label>住所<span>必須</span></label>
+      <%= f.text_field :address, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="store_new_field">
+      <label>建物名</label>
+      <%= f.text_field :building, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="store_new_field store_new_field_last">
+      <label>電話番号<span>必須</span></label>
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="store_new_actions">
+      <%= f.submit "登録する", class: "store_new_submit" %>
+    </div>
+  <% end %>
+</div>
+
+<%#= render "devise/shared/links" %>
+
+<%= render "shared/footer" %>
