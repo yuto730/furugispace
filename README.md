@@ -97,3 +97,6 @@
 ### Association
 - belongs_to :store
 - belongs_to :user
+
+# ER図
+![furugispace_er](https://user-images.githubusercontent.com/72351740/105690782-c0f82b80-5f3f-11eb-87c6-4fd150643f0e.png)

@@ -46,32 +46,40 @@ header{
     .header_if{
       display: flex;
       .registration{
-        color: #FF9D30;
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        border: 1px solid #FF9D30;
         margin-right: 10px;
-        text-align: center;
         .registration_box{
-          padding-top: 12px;
-          span{
+          button{
+            width: 68px;
+            height: 68px;
+            border: 1px solid #FF9D30;
+            border-radius: 50%;
             font-size: 12px;
+            color: #FF9D30;
+            text-align: center;
+          }
+          button:hover{
+            background-color: #FF9D30;
+            color: #fff;
+            transition: 0.3s;
           }
         }
       }
       .login{
-        background-color: #FF9D30;
-        color: #fff;
-        width: 68px;
-        height: 68px;
-        border-radius: 50%;
-        border: 1px solid #FF9D30;
-        text-align: center;
         .login_box{
-          padding-top: 12px;
-          span{
+          button{
+            background-color: #FF9D30;
+            width: 68px;
+            height: 68px;
+            border: 1px solid #FF9D30;
+            border-radius: 50%;
             font-size: 12px;
+            color: #fff;
+            text-align: center;
+          }
+          button:hover{
+            background-color: #fff;
+            color: #FF9D30;
+            transition: 0.3s;
           }
         }
       }

@@ -4,9 +4,6 @@
   <h2>ユーザーログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="login_title">
-      <h3>ユーザーログイン</h3>
-    </div>
     <div class="user_login_field">
       <%= f.email_field :email, autocomplete: "email", placeholder:"メールアドレス" %>
     </div>
@@ -22,10 +19,5 @@
 </div>
 
 <%#= render "devise/shared/links" %>
-<div id="user_new">
-  <%= link_to(new_user_registration_path, class: 'user_new_link') do %>
-    <span>新規会員登録する</span>
-  <% end %>
-</div>
 
 <%= render "shared/footer" %>
