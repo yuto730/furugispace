@@ -39,8 +39,7 @@ class Registration extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <button onClick={this.openModal}>会員登録</button> */}
+      <div id="registration">
         <div class="registration">
           <div class="registration_box">
             <button onClick={this.openModal}>会員登録</button>
@@ -54,12 +53,40 @@ class Registration extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>新規会員登録</h2>
-          <form>
-            <input />
-            <a href="/users/sign_up">ユーザー新規会員登録</a>
-            <a href="/stores/sign_up">店舗新規会員登録</a>
-          </form>
+          <div style={
+            {width: "480px",
+            margin: "20px auto"}
+          }>
+            <h2 ref={subtitle => this.subtitle = subtitle} style={
+              {textAlign: "center",
+              fontSize: "20px",
+              fontWeight: "bold"}
+            }>新規会員登録</h2>
+            <form style={
+              {display: "flex",
+              justifyContent: "space-around",
+              marginTop: "30px"}
+            }>
+              <a href="/users/sign_up" style={
+                {textAlign: "center",
+                fontSize: "16px",
+                backgroundColor: "#FF9D30",
+                width: "200px",
+                padding: "14px 0",
+                borderRadius: "30px",
+                color: "#fff"}
+              }>ユーザー新規会員登録</a>
+              <a href="/stores/sign_up" style={
+                {textAlign: "center",
+                fontSize: "16px",
+                backgroundColor: "#FF9D30",
+                width: "200px",
+                padding: "14px 0",
+                borderRadius: "30px",
+                color: "#fff"}
+              }>店舗新規会員登録</a>
+            </form>
+          </div>
         </Modal>
       </div>
     );
