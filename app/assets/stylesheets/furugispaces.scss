@@ -107,21 +107,21 @@ header{
 }
 
 /* TOP_古着ニュース */
-.news{
+.top_news{
   width: 1200px;
   margin: 80px auto 0;
   h2{
     text-align: center;
     font-size: 30px;
   }
-  .news_flex{
+  .top_news_flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .news_box{
+    .top_news_box{
       width: 270px;
       margin: 30px 15px 0;
-      .news_img{
+      .top_news_img{
         img{
           width: 270px;
           height: 180px;
@@ -130,7 +130,7 @@ header{
           border-top-right-radius: 10px;
         }
       }
-      .news_info{
+      .top_news_info{
         p{
           margin-top: 10px;
           font-size: 12px;
@@ -147,7 +147,7 @@ header{
       }
     }
   }
-  .news_more{
+  .top_news_more{
     width: 320px;
     height: 52px;
     border: 1px solid #FF9D30;
@@ -161,7 +161,7 @@ header{
       color: #FF9D30;
     }
   }
-  .news_more:hover{
+  .top_news_more:hover{
     background-color: #FF9D30;
     transition: 0.3s;
     a:hover{
@@ -172,21 +172,21 @@ header{
 }
 
 /* TOP_古着イベント */
-.event{
+.top_event{
   width: 1200px;
   margin: 80px auto 0;
   h2{
     text-align: center;
     font-size: 30px;
   }
-  .event_flex{
+  .top_event_flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .event_box{
+    .top_event_box{
       width: 270px;
       margin: 30px 15px 0;
-      .event_img{
+      .top_event_img{
         img{
           width: 270px;
           height: 180px;
@@ -195,7 +195,7 @@ header{
           border-top-right-radius: 10px;
         }
       }
-      .event_info{
+      .top_event_info{
         border-bottom: 1px solid #333;
         padding-bottom: 20px;
         h3{
@@ -213,7 +213,7 @@ header{
       }
     }
   }
-  .event_more{
+  .top_event_more{
     width: 320px;
     height: 52px;
     border: 1px solid #FF9D30;
@@ -227,7 +227,7 @@ header{
       color: #FF9D30;
     }
   }
-  .event_more:hover{
+  .top_event_more:hover{
     background-color: #FF9D30;
     transition: 0.3s;
     a:hover{
@@ -238,21 +238,21 @@ header{
 }
 
 /* TOP_古着コミュニティ */
-.community{
+.top_community{
   width: 1200px;
   margin: 80px auto 0;
   h2{
     text-align: center;
     font-size: 30px;
   }
-  .community_flex{
+  .top_community_flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .community_box{
+    .top_community_box{
       width: 270px;
       margin: 30px 15px 0;
-      .community_img{
+      .top_community_img{
         position: relative;
         display: block;
         img{
@@ -261,7 +261,7 @@ header{
           object-fit: cover;
           border-radius: 10px;
         }
-        .community_info{
+        .top_community_info{
           padding: 50px 10px 20px;
           width: 100%;
           position: absolute;
@@ -276,7 +276,7 @@ header{
       }
     }
   }
-  .community_more{
+  .top_community_more{
     width: 320px;
     height: 52px;
     border: 1px solid #FF9D30;
@@ -290,7 +290,7 @@ header{
       color: #FF9D30;
     }
   }
-  .community_more:hover{
+  .top_community_more:hover{
     background-color: #FF9D30;
     transition: 0.3s;
     a:hover{
@@ -301,21 +301,21 @@ header{
 }
 
 /* TOP_古着コーディネート */
-.coordination{
+.top_coordination{
   width: 1200px;
   margin: 80px auto 0;
   h2{
     text-align: center;
     font-size: 30px;
   }
-  .coordination_flex{
+  .top_coordination_flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .coordination_box{
+    .top_coordination_box{
       width: 270px;
       margin: 30px 15px 0;
-      .coordination_img{
+      .top_coordination_img{
         position: relative;
         display: block;
         img{
@@ -324,7 +324,7 @@ header{
           object-fit: cover;
           border-radius: 10px;
         }
-        .coordination_info{
+        .top_coordination_info{
           padding: 50px 10px 20px;
           width: 100%;
           position: absolute;
@@ -339,7 +339,7 @@ header{
       }
     }
   }
-  .coordination_more{
+  .top_coordination_more{
     width: 320px;
     height: 52px;
     border: 1px solid #FF9D30;
@@ -353,7 +353,7 @@ header{
       color: #FF9D30;
     }
   }
-  .coordination_more:hover{
+  .top_coordination_more:hover{
     background-color: #FF9D30;
     transition: 0.3s;
     a:hover{
@@ -418,39 +418,6 @@ footer{
       padding: 15px 0 30px;
       text-align: center;
       font-size: 14px;
-    }
-  }
-}
-
-/* 古着ニュース */
-#pagination{
-  text-align: center;
-  .pagination{
-    span{
-      display: inline-block;
-      margin: 0 3px;
-      padding: 10px 14px;
-      border: 1px solid #A7A7A7;
-      border-radius: 50%;
-    }
-    span:first-child{
-      margin-right: 10px;
-      padding: 10px 18px;
-      border-radius: 20px !important;
-    }
-    span:last-child{
-      margin-left: 10px;
-      padding: 10px 18px;
-      border-radius: 20px !important;
-    }
-    span:hover{
-      background-color: #A7A7A7;
-      color: #fff;
-      transition: 0.2s;
-    }
-    .current{
-      background-color: #A7A7A7;
-      color: #fff;
     }
   }
 }

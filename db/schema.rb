@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_040305) do
+ActiveRecord::Schema.define(version: 2021_01_28_042439) do
+
+  create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "community_title", null: false
+    t.text "community_profile", null: false
+    t.bigint "store_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_communities_on_store_id"
+    t.index ["user_id"], name: "index_communities_on_user_id"
+  end
 
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "notice_title", null: false
@@ -52,4 +63,6 @@ ActiveRecord::Schema.define(version: 2021_01_26_040305) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "communities", "stores"
+  add_foreign_key "communities", "users"
 end
