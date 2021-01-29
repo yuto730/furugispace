@@ -77,22 +77,12 @@
 
 
 ## coordinations テーブル
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| hat      | string     |                                | <!-- 帽子 -->
-| outer    | string     |                                | <!-- アウター -->
-| inner    | string     | null: false                    | <!-- インナー -->
-| belt     | string     |                                | <!-- ベルト -->
-| Pant     | string     | null: false                    | <!-- パンツ -->
-| sock     | string     |                                | <!-- 靴下 -->
-| shoe     | string     | null: false                    | <!-- 靴 -->
-| eye      | string     |                                | <!-- 眼鏡/サングラス -->
-| earring  | string     |                                | <!-- ピアス/イヤリング -->
-| necklace | string     |                                | <!-- ネックレス -->
-| bracelet | string     |                                | <!-- ブレスレット -->
-| ring     | string     |                                | <!-- 指輪 -->
-| store    | references | null: false, foreign_key: true |
-| user     | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| item_id   | integer    |                                | <!-- コーディネートアイテム -->
+| item_text | string     |                                | <!-- アイテム詳細 -->
+| store     | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :store
