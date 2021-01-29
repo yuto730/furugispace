@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_081450) do
+ActiveRecord::Schema.define(version: 2021_01_29_050039) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 2021_01_28_081450) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["store_id"], name: "index_communities_on_store_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
+  end
+
+  create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "item_id"
+    t.string "item_text"
+    t.bigint "store_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_coordinations_on_store_id"
+    t.index ["user_id"], name: "index_coordinations_on_user_id"
   end
 
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,4 +98,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_081450) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "communities", "stores"
   add_foreign_key "communities", "users"
+  add_foreign_key "coordinations", "stores"
+  add_foreign_key "coordinations", "users"
 end

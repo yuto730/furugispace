@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :notices, only: :index
   # コミュニティページ遷移
   resources :communities, only: [:index, :new, :create, :show]
+  # コーディネートページ遷移
+  resources :coordinations, only: :index
 end
