@@ -5,4 +5,5 @@ class Notice < ApplicationRecord
     validates :notice_heading
     validates :notice_description
   end
+  belongs_to :store
 end
