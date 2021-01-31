@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_050039) do
     t.string "notice_display", null: false
     t.string "notice_heading", null: false
     t.text "notice_description", null: false
-    t.integer "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
