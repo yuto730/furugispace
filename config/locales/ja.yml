@@ -1,0 +1,9 @@
+ja:
+  time:
+    formats:
+      default: "%Y%m月%d日"
+  views:
+    pagination:
+      previous: "前へ"
+      next: "次へ"
+      truncate: "..."

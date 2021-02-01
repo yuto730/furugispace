@@ -6,40 +6,16 @@
   <div class="community">
     <div class="community_content">
       <div class="community_flex">
-        <a href="#" class="community_box">
-          <div class="community_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="community_info">
-              <h3>コミュニティ名</h3>
+        <% @communities.each do |community| %>
+          <%= link_to community_path(community.id), class: 'community_box' do %>
+            <div class="community_img">
+              <%= image_tag community.image %>
+              <div class="community_info">
+                <%= community.community_title.truncate(12) %>
+              </div>
             </div>
-          </div>
-        </a>
-        <%# ダミー開始 %>
-        <a href="#" class="community_box">
-          <div class="community_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="community_info">
-              <h3>コミュニティ名</h3>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="community_box">
-          <div class="community_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="community_info">
-              <h3>コミュニティ名</h3>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="community_box">
-          <div class="community_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="community_info">
-              <h3>コミュニティ名</h3>
-            </div>
-          </div>
-        </a>
-        <%# ダミー終了 %>
+          <% end %>
+        <% end %>
       </div>
       <ul id=“community_pagination”>
         <li class=“pagination”><%= paginate @communities %></li>

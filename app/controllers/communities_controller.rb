@@ -1,4 +1,5 @@
 class CommunitiesController < ApplicationController
+
   def index
     @communities = Community.page(params[:page]).per(1)
   end
