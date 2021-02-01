@@ -1,6 +1,5 @@
 class Community < ApplicationRecord
 
-  belongs_to :store
   belongs_to :user
   has_one_attached :image
 
