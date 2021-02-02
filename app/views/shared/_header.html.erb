@@ -22,20 +22,18 @@
       <% end %>
     </div>
     <div class="header_if">
-      <% if user_signed_in? or store_signed_in? %>
-        <%# if user.id == current_user.id %>
-          <%= link_to(destroy_user_session_path, method: :delete) do %>
-            <div>
-              <p>ユーザーログアウト</p>
-            </div>
-          <% end %>
-        <%# elsif store.id == current_store.id %>
-          <%= link_to(destroy_store_session_path, method: :delete) do %>
-            <div>
-              <p>店舗ログアウト</p>
-            </div>
-          <% end %>
-        <%# end %>
+      <% if user_signed_in? %>
+        <%= link_to(destroy_user_session_path, method: :delete) do %>
+          <div>
+            <p>ユーザーログアウト</p>
+          </div>
+        <% end %>
+      <% elsif store_signed_in? %>
+        <%= link_to(destroy_store_session_path, method: :delete) do %>
+          <div>
+            <p>店舗ログアウト</p>
+          </div>
+        <% end %>
       <% else %>
         <%= react_component("Registration") %>
         <%= react_component("Session") %>
