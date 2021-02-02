@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <div class="header_if">
-      <% if user_signed_in? %>
+      <% if user_signed_in? or store_signed_in? %>
         <%# if user.id == current_user.id %>
           <%= link_to(destroy_user_session_path, method: :delete) do %>
             <div>

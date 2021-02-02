@@ -5,4 +5,10 @@ class Store < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notices
+
+  with_options presence: true do
+    validates :store_nickname
+    validates :address
+    validates :phone_number
+  end
 end
