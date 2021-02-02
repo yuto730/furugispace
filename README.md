@@ -9,7 +9,7 @@
 | address               | string | null: false | <!-- 住所 -->
 | building              | string |             | <!-- 建物名 -->
 | phone_number          | string | null: false | <!-- 電話番号 -->
-| store_profile         | text   |             | <!-- 店舗プロフィール -->
+| store_profile         | text   |             | <!-- プロフィール -->
 
 ### Association
 - has_many :notices
@@ -24,7 +24,7 @@
 | user_nickname         | string | null: false | <!-- ユーザー名 -->
 | email                 | string | null: false | <!-- メールアドレス -->
 | password_confirmation | string | null: false | <!-- パスワード -->
-| user_profile          | text   |             | <!-- ユーザープロフィール -->
+| user_profile          | text   |             | <!-- プロフィール -->
 
 ### Association
 - has_many :communities
@@ -67,7 +67,7 @@
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
 | community_title   | string     | null: false                    | <!-- コミュニティ名 -->
-| community_profile | text       | null: false                    | <!-- コミュニティプロフィール -->
+| community_profile | text       | null: false                    | <!-- プロフィール -->
 | store             | references | null: false, foreign_key: true |
 | user              | references | null: false, foreign_key: true |
 
@@ -77,16 +77,18 @@
 
 
 ## coordinations テーブル
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| item_id   | integer    |                                | <!-- コーディネートアイテム -->
-| item_text | string     |                                | <!-- アイテム詳細 -->
-| store     | references | null: false, foreign_key: true |
-| user      | references | null: false, foreign_key: true |
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| coordination_title   | string     | null: false                    | <!-- コーディネート名 -->
+| coordination_profile | text       | null: false                    | <!-- プロフィール -->
+| item_id              | integer    |                                | <!-- コーディネートアイテム -->
+| item_text            | string     |                                | <!-- アイテム詳細 -->
+| store                | references | null: false, foreign_key: true |
+| user                 | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :store
 - belongs_to :user
 
 # ER図
-![furugispace_er](https://user-images.githubusercontent.com/72351740/105690782-c0f82b80-5f3f-11eb-87c6-4fd150643f0e.png)
+![furugispace](https://user-images.githubusercontent.com/72351740/106550679-f5c73c80-6556-11eb-8a21-9735b5e7b787.png)
