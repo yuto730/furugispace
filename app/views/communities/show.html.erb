@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div id="community_show">
+  <div class="community_show">
+    <%= image_tag @community.image %>
+    <div class="community_info">
+      <h3>
+        <%= @community.community_title %>
+      </h3>
+      <p>
+        <%= @community.community_profile %>
+      </p>
+      <h4>参加メンバー</h4>
+    </div>
+    <div class="community_creat">
+      <%= @community.created_at.strftime("%Y/%m/%d 作成") %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
