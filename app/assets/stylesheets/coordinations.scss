@@ -37,9 +37,9 @@
           }
         }
       }
-      #coordination_pagination{
+      ul{
         text-align: center;
-        .pagination{
+        li{
           span{
             display: inline-block;
             margin: 0 3px;
@@ -60,12 +60,12 @@
           span:hover{
             background-color: #FF9D30;
             color: #fff;
-            transition: 0.2s;
+            transition: 0.3s;
           }
-          .current{
-            background-color: #FF9D30;
-            color: #fff;
-          }
+        }
+        .current{
+          background-color: #FF9D30;
+          color: #fff;
         }
       }
     }
