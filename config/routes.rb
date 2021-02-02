@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   # ニュースページ遷移
-  resources :notices, only: :index
+  resources :notices, only: [:index, :new, :create]
   # コミュニティページ遷移
   resources :communities, only: [:index, :new, :create, :show]
   # コーディネートページ遷移
