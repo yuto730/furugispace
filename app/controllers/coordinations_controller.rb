@@ -1,7 +1,7 @@
 class CoordinationsController < ApplicationController
 
   def index
-    @coordinations = Coordination.all
+    @coordinations = Coordination.page(params[:page]).per(1)
   end
 
   def new

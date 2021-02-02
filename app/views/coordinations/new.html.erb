@@ -25,7 +25,7 @@
       <div class="coordination_new_box">
         <div class="coordination_hash">
           <label>商品<span>必須</span></label><br>
-          <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) <i class="fas fa-sort"></i> %>
+          <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
         </div>
         <div class="coordination_hash">
           <label>商品説明<span>必須</span></label><br>

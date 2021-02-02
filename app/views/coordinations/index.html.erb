@@ -6,43 +6,19 @@
   <div class="coordination">
     <div class="coordination_content">
       <div class="coordination_flex">
-        <a href="#" class="coordination_box">
-          <div class="coordination_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="coordination_info">
-              <h3>ユーザー名</h3>
+        <% @coordinations.each do |coordination| %>
+          <%= link_to coordination_path(coordination.id), class: 'coordination_box' do %>
+            <div class="coordination_img">
+              <%= image_tag coordination.image %>
+              <div class="coordination_info">
+                <%= coordination.coordination_title.truncate(12) %>
+              </div>
             </div>
-          </div>
-        </a>
-        <%# ダミー開始 %>
-        <a href="#" class="coordination_box">
-          <div class="coordination_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="coordination_info">
-              <h3>ユーザー名</h3>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="coordination_box">
-          <div class="coordination_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="coordination_info">
-              <h3>ユーザー名</h3>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="coordination_box">
-          <div class="coordination_img">
-            <%= image_tag "furugi_img01.jpg" %>
-            <div class="coordination_info">
-              <h3>ユーザー名</h3>
-            </div>
-          </div>
-        </a>
-        <%# ダミー終了 %>
+          <% end %>
+        <% end %>
       </div>
       <ul id=“coordination_pagination”>
-        <li class=“pagination”><%#= paginate @communities %></li>
+        <li class=“pagination”><%= paginate @coordinations %></li>
       </ul>
     </div>
 
