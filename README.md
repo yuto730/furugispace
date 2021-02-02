@@ -80,9 +80,9 @@
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | coordination_title   | string     | null: false                    | <!-- コーディネート名 -->
-| coordination_profile | text       | null: false                    | <!-- プロフィール -->
-| item_id              | integer    |                                | <!-- コーディネートアイテム -->
-| item_text            | string     |                                | <!-- アイテム詳細 -->
+| coordination_profile | text       |                                | <!-- プロフィール -->
+| item_id              | integer    | null: false                    | <!-- アイテム -->
+| item_text            | string     | null: false                    | <!-- アイテム詳細 -->
 | store                | references | null: false, foreign_key: true |
 | user                 | references | null: false, foreign_key: true |
 
