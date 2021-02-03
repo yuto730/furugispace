@@ -18,6 +18,7 @@ class CoordinationsController < ApplicationController
   end
 
   def show
+    @coordination = Coordination.find(params[:id])
   end
 
   private
