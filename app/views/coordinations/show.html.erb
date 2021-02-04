@@ -4,7 +4,7 @@
   <div class="coordination_show">
     <div class="coordination_show_info">
       <%= image_tag "icon.png" %>
-      <h3>ユーザー名ユーザー名</h3>
+      <h3><%= @coordination.user.user_nickname %></h3>
     </div>
     <div class="coordination_show_head_right">
       <div class="caution">
@@ -13,8 +13,53 @@
       <button>フォローする</button>
     </div>
   </div>
-  <div id="coordination_create">
-    <div class="coordination_create">
+  <div id="coordination_content">
+    <div class="coordination_content">
+      <div class="coordination_left">
+        <%= image_tag @coordination.image %>
+        <div id="coordination_comment">
+          <h3><%= @coordination.user.user_nickname %>さんへのコメント</h3>
+          <div class="coordination_comment">
+            <p>NO COMMENT</p>
+          </div>
+          <div class="coordination_comment_action">
+            <textarea rows="5" placeholder="コメントを書く"></textarea>
+            <button>送信</button>
+          </div>
+        </div>
+      </div>
+      <div class="coordination_right">
+        <div class="coordination_rightbox1">
+          <div class="coordination_date">
+            <%= @coordination.created_at.strftime("%Y/%m/%d") %>
+          </div>
+          <div class="coordination_title">
+            <%= @coordination.coordination_title %>
+          </div>
+        </div>
+        <div class="coordination_rightbox2">
+          <%= @coordination.coordination_profile %>
+        </div>
+        <div class="coordination_rightbox3">
+          <table>
+            <tr>
+              <th><%= @coordination.item.name %>：</th>
+              <td><%= @coordination.item_text %></td>
+            </tr>
+          </table>
+        </div>
+        <div class="coordination_rightbox4">
+          <div class="coordination_share">
+            <p>この記事をシェアする</p>
+            <%= image_tag "facebook.png" %>
+            <%= image_tag "twitter.png" %>
+            <%= image_tag "line.png" %>
+          </div>
+          <div class="coordination_like">
+            <%= image_tag "like.png" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
