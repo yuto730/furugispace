@@ -299,7 +299,7 @@ header{
 /* TOP_古着コーディネート */
 .top_coordination{
   width: 1200px;
-  margin: 80px auto 0;
+  margin: 80px auto;
   h2{
     text-align: center;
     font-size: 30px;
@@ -364,7 +364,7 @@ footer{
   background-color: #FF9D30;
   .footer{
     width: 1200px;
-    margin: 80px auto 0;
+    margin: 0 auto;
     .footer_top{
       display: flex;
       justify-content: space-between;

@@ -36,20 +36,22 @@ ActiveRecord::Schema.define(version: 2021_01_29_050039) do
   create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "community_title", null: false
     t.text "community_profile", null: false
+    t.bigint "store_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_communities_on_store_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
   create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "coordination_title", null: false
-    t.text "coordination_profile"
-    t.integer "item_id", null: false
-    t.string "item_text", null: false
+    t.integer "item_id"
+    t.string "item_text"
+    t.bigint "store_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_coordinations_on_store_id"
     t.index ["user_id"], name: "index_coordinations_on_user_id"
   end
 
@@ -95,6 +97,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_050039) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "communities", "stores"
   add_foreign_key "communities", "users"
+  add_foreign_key "coordinations", "stores"
   add_foreign_key "coordinations", "users"
 end

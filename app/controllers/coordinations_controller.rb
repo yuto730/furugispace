@@ -1,4 +1,5 @@
 class CoordinationsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @coordinations = Coordination.page(params[:page]).per(1)
@@ -18,6 +19,22 @@ class CoordinationsController < ApplicationController
   end
 
   def show
+    @coordination = Coordination.find(params[:id])
+  end
+
+  def edit
+    @coordination = Coordination.find(params[:id])
+    if @coordination.user_id != current_user.id
+      redirect_to new_user_session_path
+    end
+  end
+
+  def update
+    if @coordination.update(coordination_params)
+      redirect_to coordination_path(@coordination.id)
+    else
+      render :edit
+    end
   end
 
   private

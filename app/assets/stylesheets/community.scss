@@ -1,7 +1,7 @@
 /* 古着コミュニティ */
 #community{
   width: 1200px;
-  margin: 80px auto 0;
+  margin: 80px auto;
   h2{
     text-align: center;
     font-size: 30px;
@@ -100,7 +100,7 @@
 /* コミュニティ新規作成 */
 #community_new{
   width: 850px;
-  margin: 80px auto 0;
+  margin: 80px auto;
   h2{
     text-align: center;
     font-size: 30px;
@@ -163,7 +163,7 @@
 
 /* コミュニティ詳細 */
 #community_show{
-  margin-top: 80px;
+  margin: 80px 0 80px;
   .community_show{
     width: 1200px;
     margin: 0 auto;
