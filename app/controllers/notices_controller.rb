@@ -1,6 +1,6 @@
 class NoticesController < ApplicationController
   def index
-    @notices = Notice.page(params[:page]).per(1)
+    @notices = Notice.page(params[:page]).per(3)
   end
 
   def new
