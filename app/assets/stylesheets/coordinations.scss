@@ -15,16 +15,15 @@
       .coordination_flex{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         .coordination_box{
           width: 260px;
-          margin-bottom: 30px;
+          margin: 0 12px 30px;
           background-color: #fcfcfc;
           .coordination_img{
             position: relative;
             display: block;
             img{
-              width: 270px;
+              width: 260px;
               height: 320px;
               object-fit: cover;
               border-top-left-radius: 10px;
