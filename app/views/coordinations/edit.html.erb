@@ -1,3 +1,50 @@
 <%= render "shared/header" %>
 
+<div id="coordination_new">
+  <h2>コーディネートを編集</h2>
+  <%= form_with(model: @coordination, local: true) do |f|%>
+
+    <div class="coordination_new_field">
+      <label>タイトル<span>必須</span></label><br>
+      <%= f.text_field :coordination_title %>
+      <p>一覧画面に掲載されます。</p>
+    </div>
+
+    <div class="coordination_new_field">
+      <label>コーディネート画像<span>必須</span></label><br>
+      <%= f.file_field :image, class: "coordination_img" %>
+      <p>一覧画面に掲載されます。</p>
+    </div>
+
+    <div class="coordination_new_field">
+      <label>本文</label><br>
+      <%= f.text_area :coordination_profile %>
+    </div>
+
+    <div id="coordination_new_box">
+      <div class="coordination_new_box">
+        <div class="coordination_hash">
+          <label>商品<span>必須</span></label><br>
+          <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
+        </div>
+        <div class="coordination_hash">
+          <label>商品説明<span>必須</span></label><br>
+          <%= f.text_field :item_text %>
+        </div>
+        <div class="coordination_delite_action">
+          <button><i class="fas fa-minus"></i>削除</button>
+        </div>
+      </div>
+      <div class="coordination_creat_action">
+        <button><i class="fas fa-plus"></i>追加</button>
+      </div>
+    </div>
+
+    <div class="coordination_new_action">
+      <%= f.submit "変更する" %>
+    </div>
+
+  <% end %>
+</div>
+
 <%= render "shared/footer" %>
