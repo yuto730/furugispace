@@ -2,7 +2,7 @@ class CoordinationsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
-    @coordinations = Coordination.page(params[:page]).per(1)
+    @coordinations = Coordination.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def new
@@ -30,6 +30,7 @@ class CoordinationsController < ApplicationController
   end
 
   def update
+    @coordination = Coordination.find(params[:id])
     if @coordination.update(coordination_params)
       redirect_to coordination_path(@coordination.id)
     else
