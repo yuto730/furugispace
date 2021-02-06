@@ -10,6 +10,7 @@
       <% if user_signed_in? %>
         <% if current_user.id == @coordination.user_id %>
           <%= link_to '編集', edit_coordination_path(@coordination.id), method: :get %>
+          <%= link_to '削除', coordination_path(@coordination.id), method: :delete %>
         <% else %>
           <div class="caution">
             <%= image_tag "icon2.png" %>

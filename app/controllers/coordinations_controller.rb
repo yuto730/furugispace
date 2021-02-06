@@ -1,4 +1,5 @@
 class CoordinationsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
@@ -19,18 +20,15 @@ class CoordinationsController < ApplicationController
   end
 
   def show
-    @coordination = Coordination.find(params[:id])
   end
 
   def edit
-    @coordination = Coordination.find(params[:id])
     if @coordination.user_id != current_user.id
       redirect_to new_user_session_path
     end
   end
 
   def update
-    @coordination = Coordination.find(params[:id])
     if @coordination.update(coordination_params)
       redirect_to coordination_path(@coordination.id)
     else
@@ -38,9 +36,22 @@ class CoordinationsController < ApplicationController
     end
   end
 
+  def destroy
+    if @coordination.user_id == current_user.id
+      @coordination.destroy
+      redirect_to coordinations_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def coordination_params
     params.require(:coordination).permit(:coordination_title, :image, :coordination_profile, :item_id, :item_text).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @coordination = Coordination.find(params[:id])
   end
 end
