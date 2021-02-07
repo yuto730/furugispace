@@ -1,9 +1,9 @@
 class CommunitiesController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
-    @communities = Community.page(params[:page]).per(1)
+    @communities = Community.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def new
@@ -33,6 +33,15 @@ class CommunitiesController < ApplicationController
       redirect_to community_path(@community.id)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @community.user_id == current_user.id
+      @community.destroy
+      redirect_to communities_path
+    else
+      render :index
     end
   end
 

@@ -18,7 +18,17 @@
           <li>参加メンバー</li>
         </ul>
         <div class="community_button">
-          <%= link_to '編集', edit_community_path(@community.id), method: :get %>
+          <% if user_signed_in? %>
+            <% if current_user.id == @community.user_id %>
+              <%= link_to '編集', edit_community_path(@community.id), method: :get %>
+              <%= link_to '削除', community_path(@community.id), method: :delete %>
+            <% else %>
+              <div class="caution">
+                <%= image_tag "icon2.png" %>
+              </div>
+              <button>フォローする</button>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
