@@ -1,0 +1,67 @@
+<%= render "shared/header" %>
+
+<div id="notice_show">
+  <div class="notice_show">
+    <p>
+      <%= @notice.created_at.strftime("%Y/%m/%d")%>
+    </p>
+    <h3>
+      <%= @notice.notice_title %>
+    </h3>
+    <div class="notice_show_thumbnail">
+      <%= image_tag @notice.thumbnail %>
+    </div>
+    <div class="notice_show_heading">
+      <h3>
+        <%= @notice.notice_heading %>
+      </h3>
+    </div>
+    <div class="notice_show_image">
+      <%= image_tag @notice.image %>
+    </div>
+    <div class="notice_show_description">
+      <%= @notice.notice_description %>
+    </div>
+  </div>
+  <%# サイドバー↓%>
+  <div class="notice_side">
+    <% if store_signed_in? %>
+      <% if @notice.store.id == current_store.id %>
+        <div class="notice_side_btn">
+          <div class="notice_side_edit_btn">
+            <%= link_to(edit_notice_path(@notice.id), method: :get) do %>
+              <p>
+                ニュースを編集
+              </p>
+            <% end %>
+          </div>
+          <div class="notice_side_des_btn">
+            <%= link_to(notice_path(@notice.id), method: :delete) do %>
+              <p>
+                ニュースを削除
+              </p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+      <div class="notice_side_title">
+        <h4>
+          新着記事
+        </h4>
+        <div class="notice_side_bgc">
+          <% @notices.first(3).each do |notice| %>
+            <div class="notice_side_content">
+              <div class="notice_side_img">
+                <%= image_tag notice.thumbnail %>
+              </div>
+              <div class="notice_side_text">
+                <%= notice.notice_title %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+<%= render "shared/footer" %>
