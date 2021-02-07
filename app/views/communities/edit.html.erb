@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div id="community_form">
-  <h2>コミュニティを作成</h2>
+  <h2>コミュニティを編集</h2>
   <%= form_with(model: @community, local: true) do |f|%>
 
     <div class="community_form_field">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="community_form_action">
-      <%= f.submit "作成する" %>
+      <%= f.submit "変更する" %>
     </div>
 
   <% end %>

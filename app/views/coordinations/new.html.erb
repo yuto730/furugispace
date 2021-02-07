@@ -1,28 +1,28 @@
 <%= render "shared/header" %>
 
-<div id="coordination_new">
+<div id="coordination_form">
   <h2>コーディネートを作成</h2>
   <%= form_with(model: @coordination, local: true) do |f|%>
 
-    <div class="coordination_new_field">
+    <div class="coordination_form_field">
       <label>タイトル<span>必須</span></label><br>
       <%= f.text_field :coordination_title %>
       <p>一覧画面に掲載されます。</p>
     </div>
 
-    <div class="coordination_new_field">
+    <div class="coordination_form_field">
       <label>コーディネート画像<span>必須</span></label><br>
       <%= f.file_field :image, class: "coordination_img" %>
       <p>一覧画面に掲載されます。</p>
     </div>
 
-    <div class="coordination_new_field">
+    <div class="coordination_form_field">
       <label>本文</label><br>
       <%= f.text_area :coordination_profile %>
     </div>
 
-    <div id="coordination_new_box">
-      <div class="coordination_new_box">
+    <div id="coordination_form_box">
+      <div class="coordination_form_box">
         <div class="coordination_hash">
           <label>商品<span>必須</span></label><br>
           <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="coordination_new_action">
+    <div class="coordination_form_action">
       <%= f.submit "作成する" %>
     </div>
 
