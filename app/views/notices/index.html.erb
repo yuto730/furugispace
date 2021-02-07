@@ -7,16 +7,18 @@
     <div class="news_content">
       <div class="news_flex">
         <% @notices.each do |notice|%>
-          <a href="#" class="news_box">
-            <div class="news_img">
-              <%= image_tag notice.thumbnail %>
-              <div class="news_info">
-                <p><%= notice.store.store_nickname %></p>
-                <h3><%= notice.notice_title %></h3>
-                <time><%= notice.created_at.strftime("%Y/%m/%d") %></time>
+          <%= link_to notice_path(notice.id), method: :get do %>
+            <div class="news_box">
+              <div class="news_img">
+                <%= image_tag notice.thumbnail %>
+                <div class="news_info">
+                  <p><%= notice.store.store_nickname %></p>
+                  <h3><%= notice.notice_title %></h3>
+                  <time><%= notice.created_at.strftime("%Y/%m/%d") %></time>
+                </div>
               </div>
             </div>
-          </a>
+          <% end %>
         <% end %>
       </div>
       <ul>
