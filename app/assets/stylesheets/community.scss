@@ -97,8 +97,8 @@
   }
 }
 
-/* コミュニティ新規作成 */
-#community_new{
+/* コミュニティ作成/編集 */
+#community_form{
   width: 850px;
   margin: 80px auto;
   h2{
@@ -107,7 +107,7 @@
   }
   form{
     margin-top: 40px;
-    .community_new_field{
+    .community_form_field{
       margin-bottom: 30px;
       label{
         span{
@@ -142,7 +142,7 @@
         cursor: pointer;
       }
     }
-    .community_new_action{
+    .community_form_action{
       margin-top: 60px;
       text-align: center;
       input{
@@ -163,35 +163,105 @@
 
 /* コミュニティ詳細 */
 #community_show{
-  margin: 80px 0 80px;
+  margin: 80px 0;
   .community_show{
     width: 1200px;
     margin: 0 auto;
     display: flex;
-  }
-  img{
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  .community_info{
-    margin-left: 30px;
-    h3{
-      font-weight: bold;
-      font-size: 24px;
+    img{
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
     }
-    p{
-      margin-top: 30px;
+    .community_show_info{
+      width: 950px;
+      margin-left: 30px;
+      .community_date{
+        float: right;
+        font-size: 14px;
+      }
+      h3{
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .community_profile{
+        margin-top: 30px;
+      }
+      .community_member_box{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 30px;
+        .community_user{
+          display: flex;
+          li:first-child{
+            font-weight: bold;
+            padding-bottom: 5px;
+          }
+        }
+        .community_button{
+          display: flex;
+          a{
+            width: 140px;
+            padding: 10px 0;
+            margin-left: 15px;
+            border: 1px solid #FF9D30;
+            border-radius: 30px;
+            color: #FF9D30;
+            text-align: center;
+            font-size: 14px;
+          }
+          a:hover{
+            background-color: #FF9D30;
+            color: #fff;
+            transition: 0.3s;
+          }
+        }
+      }
     }
-    h4{
-      margin-top: 30px;
-      font-weight: bold;
-    }
-  }
-  .community_creat{
-    margin: 0 0 0 auto;
-    font-size: 14px;
-    color: #888;
   }
 }
+// #community_show{
+//   margin: 80px 0 80px;
+//   .community_show{
+//     width: 1200px;
+//     margin: 0 auto;
+//     display: flex;
+//   }
+//   img{
+//     width: 220px;
+//     height: 220px;
+//     object-fit: cover;
+//     border-radius: 10px;
+//   }
+//   .community_show_info{
+//     margin-left: 30px;
+//     h3{
+//       font-weight: bold;
+//       font-size: 24px;
+//     }
+//     p{
+//       margin-top: 30px;
+//     }
+//     h4{
+//       margin-top: 30px;
+//       font-weight: bold;
+//     }
+//   }
+//   .community_creat{
+//     margin: 0 0 0 auto;
+//     font-size: 14px;
+//     color: #888;
+//     a{
+//       width: 140px;
+//       padding: 10px 0;
+//       margin-left: 15px;
+//       border: 1px solid #FF9D30;
+//       border-radius: 30px;
+//       color: #FF9D30;
+//       text-align: center;
+//       font-size: 14px;
+//     }
+//   }
+// }

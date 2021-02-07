@@ -3,17 +3,24 @@
 <div id="community_show">
   <div class="community_show">
     <%= image_tag @community.image %>
-    <div class="community_info">
+    <div class="community_show_info">
+      <p class="community_date">
+        <%= @community.created_at.strftime("%Y/%m/%d 作成") %>
+      </p>
       <h3>
         <%= @community.community_title %>
       </h3>
-      <p>
+      <p class="community_profile">
         <%= @community.community_profile %>
       </p>
-      <h4>参加メンバー</h4>
-    </div>
-    <div class="community_creat">
-      <%= @community.created_at.strftime("%Y/%m/%d 作成") %>
+      <div class="community_member_box">
+        <ul class="community_user">
+          <li>参加メンバー</li>
+        </ul>
+        <div class="community_button">
+          <%= link_to '編集', edit_community_path(@community.id), method: :get %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
