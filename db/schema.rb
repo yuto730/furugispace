@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_050039) do
+ActiveRecord::Schema.define(version: 2021_02_07_062136) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,34 +33,39 @@ ActiveRecord::Schema.define(version: 2021_01_29_050039) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "coordination_id"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "community_title", null: false
     t.text "community_profile", null: false
-    t.bigint "store_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["store_id"], name: "index_communities_on_store_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
   create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id"
-    t.string "item_text"
-    t.bigint "store_id", null: false
+    t.string "coordination_title", null: false
+    t.text "coordination_profile"
+    t.integer "item_id", null: false
+    t.string "item_text", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["store_id"], name: "index_coordinations_on_store_id"
     t.index ["user_id"], name: "index_coordinations_on_user_id"
   end
 
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "notice_title", null: false
-    t.boolean "notice_display", default: true, null: false
+    t.string "notice_display", null: false
     t.string "notice_heading", null: false
     t.text "notice_description", null: false
-    t.integer "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -97,8 +102,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_050039) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "communities", "stores"
   add_foreign_key "communities", "users"
-  add_foreign_key "coordinations", "stores"
   add_foreign_key "coordinations", "users"
 end

@@ -20,6 +20,8 @@ class CoordinationsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @coordination.comments.includes(:user)
   end
 
   def edit

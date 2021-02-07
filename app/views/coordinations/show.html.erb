@@ -24,25 +24,51 @@
     <div class="coordination_content">
       <div class="coordination_left">
         <%= image_tag @coordination.image %>
+
         <div id="coordination_comment">
           <h3><%= @coordination.user.user_nickname %>さんへのコメント</h3>
           <div class="coordination_comment">
-            <p>NO COMMENT</p>
+            <% if @coordination.comments.exists? %>
+              <% @comments.each do |comment| %>
+                <div class="comments">
+                  <strong>
+                    <%= link_to comment.user.user_nickname, "/users/#{comment.user_id}" %>
+                  </strong>
+                  <p class="comment_text">
+                    <%= comment.text %>
+                  </p>
+                  <time>
+                    <%= comment.created_at.strftime("%Y/%m/%d %H:%M") %>
+                  </time>
+                </div>
+              <% end %>
+            <% else %>
+              <p class="no_comment">NO COMMENT</p>
+            <% end %>
           </div>
           <div class="coordination_comment_action">
-            <textarea rows="5" placeholder="コメントを書く"></textarea>
-            <button>送信</button>
+            <% if user_signed_in? %>
+              <%= form_with(model: [@coordination, @comment], local: true) do |form| %>
+                <%= form.text_area :text, placeholder: "コメントを書く", rows: "3" %>
+                <%= form.submit "送信" %>
+              <% end %>
+            <% else %>
+              <strong>
+                <p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+              </strong>
+            <% end %>
           </div>
         </div>
+
       </div>
       <div class="coordination_right">
         <div class="coordination_rightbox1">
-          <div class="coordination_date">
+          <p class="coordination_date">
             <%= @coordination.created_at.strftime("%Y/%m/%d") %>
-          </div>
-          <div class="coordination_title">
+          </p>
+          <h3 class="coordination_title">
             <%= @coordination.coordination_title %>
-          </div>
+          </h3>
         </div>
         <div class="coordination_rightbox2">
           <%= @coordination.coordination_profile %>

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :communities
   has_many :coordinations
+  has_many :comments
 
   validates :user_nickname, presence: true
 end

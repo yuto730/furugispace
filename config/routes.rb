@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   # コミュニティページ遷移
   resources :communities
   # コーディネートページ遷移
-  resources :coordinations
+  resources :coordinations do
+    resources :comments, only: :create
+  end
 end
