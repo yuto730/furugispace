@@ -55,12 +55,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_122025) do
   end
 
   create_table "community_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "community_id"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["community_id"], name: "index_community_users_on_community_id"
-    t.index ["user_id"], name: "index_community_users_on_user_id"
   end
 
   create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,6 +69,11 @@ ActiveRecord::Schema.define(version: 2021_02_09_122025) do
     t.index ["store_id"], name: "index_coordinations_on_store_id"
     t.index ["user_id"], name: "index_coordinations_on_user_id"
   end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "event_title", null: false

@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :communities, through: :community_users
-  has_many :coordinations
-  has_many :comments
-  has_many :community_users
+  # has_many :community_users
+  # has_many :communities, through: :community_users
+  # has_many :messages
+  # has_many :coordinations
+  # has_many :comments
 
-  validates :user_nickname, presence: true
+  # validates :user_nickname, presence: true
 end

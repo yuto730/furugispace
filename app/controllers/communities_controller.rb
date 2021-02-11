@@ -20,6 +20,8 @@ class CommunitiesController < ApplicationController
   end
 
   def show
+    @messages = Message.all
+    set_user_id_to_cookie
   end
 
   def edit
@@ -53,6 +55,12 @@ class CommunitiesController < ApplicationController
 
   def set_item
     @community = Community.find(params[:id])
+  end
+
+  def set_user_id_to_cookie
+    if cookies.signed['user_id'].blank?
+      cookies.signed['user_id'] = current_user.id
+    end
   end
 
 end
