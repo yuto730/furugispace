@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_062657) do
+
+ActiveRecord::Schema.define(version: 2021_02_09_122025) do
+
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,9 +46,11 @@ ActiveRecord::Schema.define(version: 2021_02_08_062657) do
   create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "community_title", null: false
     t.text "community_profile", null: false
+    t.bigint "store_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_communities_on_store_id"
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
@@ -60,21 +64,39 @@ ActiveRecord::Schema.define(version: 2021_02_08_062657) do
   end
 
   create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "coordination_title", null: false
-    t.text "coordination_profile"
-    t.integer "item_id", null: false
-    t.string "item_text", null: false
+    t.integer "item_id"
+    t.string "item_text"
+    t.bigint "store_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_coordinations_on_store_id"
     t.index ["user_id"], name: "index_coordinations_on_user_id"
+  end
+
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "event_title", null: false
+    t.boolean "event_display", default: true, null: false
+    t.string "start_on", null: false
+    t.text "end_on", null: false
+    t.string "event_heading", null: false
+    t.text "event_description", null: false
+    t.string "entry_fee", null: false
+    t.integer "prefecture_id", null: false
+    t.string "event_address", null: false
+    t.string "venue", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_events_on_store_id"
   end
 
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "notice_title", null: false
-    t.string "notice_display", null: false
+    t.boolean "notice_display", default: true, null: false
     t.string "notice_heading", null: false
     t.text "notice_description", null: false
+    t.integer "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -111,8 +133,14 @@ ActiveRecord::Schema.define(version: 2021_02_08_062657) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "communities", "stores"
   add_foreign_key "communities", "users"
+
+  add_foreign_key "coordinations", "stores"
+
   add_foreign_key "community_users", "communities"
   add_foreign_key "community_users", "users"
+
   add_foreign_key "coordinations", "users"
+  add_foreign_key "events", "stores"
 end

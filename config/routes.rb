@@ -10,13 +10,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "furugispaces#index"
-  resources :furugispaces do
-    member do
-      get :noticeDetail
-    end
-  end
+  resources :furugispaces
   # ニュースページ遷移
   resources :notices
+  # イベントページ推移
+  resources :events
   # コミュニティページ遷移
   resources :communities
   # コーディネートページ遷移
