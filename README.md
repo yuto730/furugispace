@@ -28,11 +28,9 @@
 
 ### Association
 - has_many :communities
+- has_many :messages
 - has_many :coordinations
 - has_many :comments
-- has_many :community_users
-- has_many :communities, through: community_users
-- has_many :messages
 
 
 ## notices テーブル
@@ -78,20 +76,7 @@
 ### Association
 - belongs_to :store
 - belongs_to :user
-- has_many   :community_users
-- has_many   :users, through: community_users
 - has_many   :messages
-
-
-## community_users テーブル
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| community | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :community
-- belongs_to :user
 
 
 ## messages テーブル
@@ -134,4 +119,4 @@
 - belongs_to :coordination
 
 # ER図
-![furugispace](https://user-images.githubusercontent.com/72351740/107175389-091f4f80-6a10-11eb-9b53-7196f0f59c42.png)
+![furugispace](https://user-images.githubusercontent.com/72351740/107221316-cf256c00-6a56-11eb-8ff7-24a7f2b09680.png)
