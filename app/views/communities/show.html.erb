@@ -4,9 +4,9 @@
   <div class="community_show">
     <%= image_tag @community.image %>
     <div class="community_show_info">
-      <p class="community_date">
+      <time class="community_date">
         <%= @community.created_at.strftime("%Y/%m/%d 作成") %>
-      </p>
+      </time>
       <h3>
         <%= @community.community_title %>
       </h3>
@@ -31,6 +31,44 @@
           <% end %>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="message_bgc">
+  <!--相手のコメント-->
+    <div class="message_content">
+      <div class="message_box">
+        <%= image_tag "icon.png" %>
+      </div>
+      <div class="message_info">
+        <p class="user_name">muguruma</p>
+        <div class="message">
+          <p>メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ</p>
+        </div>
+        <div class="message_time">
+          <time>2021/02/08 13:00</time>
+        </div>
+      </div>
+    </div>
+    <!--相手のコメント-->
+    <!--自分のコメント-->
+    <div class="mymessage">
+      <div class="message">
+        <p>メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ</p>
+      </div>
+      <div class="message_time">
+        <time>2021/02/08 13:00</time>
+      </div>
+    </div>
+    <!--自分のコメント-->
+    <div class="message_form">
+      <div class="form-input">
+        <input class="form-message" placeholder= "メッセージを入力">
+        <label class="form-image">
+          <span class="image-file">画像</span>
+          <input type="file" class="hidden">
+        </label>
+      </div>
+      <input class="form-submit" type="submit" value="送信">
     </div>
   </div>
 </div>

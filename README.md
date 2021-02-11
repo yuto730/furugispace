@@ -29,6 +29,10 @@
 ### Association
 - has_many :communities
 - has_many :coordinations
+- has_many :comments
+- has_many :community_users
+- has_many :communities, through: community_users
+- has_many :messages
 
 
 ## notices テーブル
@@ -74,6 +78,32 @@
 ### Association
 - belongs_to :store
 - belongs_to :user
+- has_many   :community_users
+- has_many   :users, through: community_users
+- has_many   :messages
+
+
+## community_users テーブル
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| community | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :community
+- belongs_to :user
+
+
+## messages テーブル
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| content   | string     |                                |
+| user      | references | null: false, foreign_key: true |
+| community | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :community
+- belongs_to :user
 
 
 ## coordinations テーブル
@@ -89,6 +119,19 @@
 ### Association
 - belongs_to :store
 - belongs_to :user
+- has_many   :comments
+
+
+## comments テーブル
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| text         | text       | null: false                    | <!-- コメント -->
+| user         | references | null: false, foreign_key: true |
+| coordination | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :coordination
 
 # ER図
-![furugispace](https://user-images.githubusercontent.com/72351740/106550679-f5c73c80-6556-11eb-8a21-9735b5e7b787.png)
+![furugispace](https://user-images.githubusercontent.com/72351740/107175389-091f4f80-6a10-11eb-9b53-7196f0f59c42.png)
