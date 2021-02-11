@@ -5,6 +5,7 @@ class Store < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notices
+  has_many :events
 
   with_options presence: true do
     validates :store_nickname

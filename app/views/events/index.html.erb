@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<!-- 古着イベント -->
+<div id="event">
+  <h2>・・・・古着イベント・・・・</h2>
+  <div class="event">
+    <div class="event_content">
+      <div class="event_flex">
+        <% @events.each do |event|%>
+          <%#= link_to notice_path(notice.id), method: :get do %>
+            <div class="event_box">
+              <div class="event_img">
+                <%= image_tag event.thumbnail %>
+                <div class="event_info">
+                  <p><%= event.store.store_nickname %></p>
+                  <h3><%= event.event_title %></h3>
+                  <time><%= event.created_at.strftime("%Y/%m/%d") %></time>
+                </div>
+              </div>
+            </div>
+          <%# end %>
+        <% end %>
+      </div>
+      <ul>
+        <li><%= paginate @events %></li>
+      </ul>
+    </div>
+
+    <div class="event_right">
+      <div class="event_btn">
+        <%= link_to 'イベントを投稿', new_event_path, class: "event_link" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
