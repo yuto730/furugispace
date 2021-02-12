@@ -29,6 +29,7 @@
 ### Association
 - has_many :communities
 - has_many :messages
+- has_many :community_users
 - has_many :coordinations
 - has_many :comments
 
@@ -74,9 +75,10 @@
 | user              | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :store
-- belongs_to :user
-- has_many   :messages
+- has_many :store
+- has_many :user
+- has_many :messages
+- has_many :community_users
 
 
 ## messages テーブル
@@ -87,8 +89,19 @@
 | community | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :community
 - belongs_to :user
+- belongs_to :community
+
+
+## community_users テーブル
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| community | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :community
 
 
 ## coordinations テーブル

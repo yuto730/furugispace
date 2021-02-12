@@ -60,47 +60,39 @@
       </div>
     </div>
     <!--自分のコメント-->
+    <h1>Chat room</h1>
+    <div id='messages' data-community_id="<%= @community.id %>">
+      <%= render @messages %>
+    </div>
 
-    <%# <div class="message_form">
+    <div class="message_form">
       <div class="form-input">
-        <input class="form-message" placeholder= "メッセージを入力">
+        <%= text_field :content, nil, class: 'form-message', placeholder: 'メッセージを入力', data: { behavior: 'community_speaker' } %>
         <label class="form-image">
           <span class="image-file">画像</span>
           <input type="file" class="hidden">
         </label>
       </div>
       <input class="form-submit" type="submit" value="送信">
-    </div> %>
-
-    <%#= form_with model: @community, class: 'form', local: true do |f| %>
-      <%# <div class="form-input">
-        <%#= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力' %>
-        <%# <label class="form-image">
-          <span class="image-file">画像</span>
-          <%#= f.file_field :image, class: 'hidden' %>
-        <%# </label>
-      </div>
-      <%#= f.submit '送信', class: 'form-submit' %>
-    <%# end %>
-
-    <h1>Chat room</h1>
-    <div id='messages'>
-      <%= render @messages %>
     </div>
 
-    <%= label_tag :content, 'Say something:' %>
-    <%= text_field_tag :content, nil, data: { behavior: 'community_speaker' } %>
+    <%# if user_signed_in? %>
+      <%#= form_with model: [@community, @message], class: 'message_form', local:true do |f| %>
+        <%# <div class="form-input">
+          <%#= f.text_field :content, nil, class: 'form-message', placeholder: 'メッセージを入力', data: { behavior: 'community_speaker' } %>
+          <%# <label class="form-image">
+            <span class="image-file">画像</span>
+            <%#= f.file_field :image, class: 'hidden' %>
+          <%# </label>
+        </div>
+        <%#= f.submit '送信', class: 'form-submit' %>
+      <%# end %>
+    <%# else %>
+      <%# <strong>
+        <p>※※※ メッセージの投稿には新規登録/ログインが必要です ※※※</p>
+      </strong>
+    <%# end %>
 
-    <%# <div class="message_form">
-      <div class="form-input">
-        <%= text_field_tag :content, nil, class: 'form-message', placeholder: 'メッセージを入力', data: { behavior: 'community_speaker' } %>
-        <%# <label class="form-image">
-          <span class="image-file">画像</span>
-          <input type="file" class="hidden">
-        </label>
-      </div>
-      <input class="form-submit" type="submit" value="送信">
-    </div> %>
   </div>
 </div>
 
