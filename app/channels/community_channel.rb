@@ -1,6 +1,6 @@
 class CommunityChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "community_channel"
+    stream_from "community_channel_#{params['community']}"
   end
 
   def unsubscribed
@@ -8,8 +8,6 @@ class CommunityChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    # jsで実行されたspeakのmessageを受け取り、community_channelのreceivedにブロードキャストする
-    binding.pry
-    ActionCable.server.broadcast 'community_channel', message: data['message']
+    Message.create! content: data['message'], user_id: current_user.id, community_id: params['community']
   end
 end

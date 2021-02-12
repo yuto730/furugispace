@@ -243,6 +243,7 @@
     }
   }
   .message_bgc{
+    position: relative;
     width: 1200px;
     height: 1200px;
     margin: 40px auto 0;
@@ -342,6 +343,9 @@
     }
     // 自分のコメント
     .message_form {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
       background-color: #eee;
       padding: 15px 20px;
       display: flex;

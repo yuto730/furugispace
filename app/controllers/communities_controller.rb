@@ -20,7 +20,7 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    @messages = Message.all
+    @messages = @community.messages
     set_user_id_to_cookie
   end
 
