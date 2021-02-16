@@ -26,7 +26,12 @@
               <div class="caution">
                 <%= image_tag "icon2.png" %>
               </div>
-              <button>参加する</button>
+              <%# <button>参加する</button> %>
+              <% if !CommunityUser.exists?(user_id:current_user.id, community_id:@community.id) %>
+                <%= link_to "参加する", community_add_path(@community),method: :post %>
+              <% else %>
+                <%= link_to "退会する", community_add_path(@community),method: :delete %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

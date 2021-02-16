@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   # イベントページ推移
   resources :events
   # コミュニティページ遷移
-  resources :communities
+  resources :communities do
+    # resources :community_users, only: [:create, :destroy]
+    post 'add' => 'community_users#create'
+    delete '/add' => 'community_users#destroy'
+  end
   # コーディネートページ遷移
   resources :coordinations do
     resources :comments, only: :create
