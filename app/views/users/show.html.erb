@@ -22,14 +22,40 @@
   </div>
   <div id="user_contents">
     <div class="user_contents">
-      <h3>
-        <%= @nickname %>
-      </h3>
-      <p>
-        <%= @user.user_profile %>
-      </p>
+      <div class="sub_block">
+        <div class="side_box">
+          <div class="user_info">
+            <h3>
+              <%= @user.user_nickname %>
+            </h3>
+            <p>
+              <%= @user.user_profile %>
+            </p>
+          </div>
+        </div>
+        <div class="side_box">
+          <div class="mypage_side_menu">
+            <p class="mypage_menu">メニュー</p>
+            <ul>
+              <li><a href="#">コーディネート</a></li>
+              <li><a href="#">コミュニティ</a></li>
+              <li><a href="#">参加コミュニティ</a></li>
+              <li><a href="#">プロフィールを編集</a></li>
+              <li><a href="#">ログアウト</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main_block">
+        <ul>
+          <li><a href="#">コーディネート</a></li>
+          <li><a href="#">コミュニティ</a></li>
+        </ul>
+        <div class="mypage_coordination">
+          <%= render partial: 'coordinations/coordination', collection: @user.coordinations %>
+        </div>
+      </div>
     </div>
   </div>
-  <h1><%= @nickname %>のユーザーページ</h1>
 </div>
 <%= render "shared/footer" %>

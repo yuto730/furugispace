@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
+
   def show
-    user = User.find(params[:id])
-    @nickname = current_user.user_nickname
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
