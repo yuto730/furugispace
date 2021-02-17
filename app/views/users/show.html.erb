@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+
+<div>
+  <div id="user_detail">
+    <div class="user_detail_img">
+      <%= image_tag "header.png" %>
+    </div>
+    <div class="user_info_bar">
+      <div class="info_bar_box">
+        <div class="user_img">
+          <%= image_tag "icon.png"%>
+        </div>
+        <div id="user_nav">
+          <ul class="user_nav">
+            <li>フォロー中</li>
+            <li>フォロワー</li>
+            <li>コミュニティ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="user_contents">
+    <div class="user_contents">
+      <h3>
+        <%= @nickname %>
+      </h3>
+      <p>
+        <%= @user.user_profile %>
+      </p>
+    </div>
+  </div>
+  <h1><%= @nickname %>のユーザーページ</h1>
+</div>
+<%= render "shared/footer" %>

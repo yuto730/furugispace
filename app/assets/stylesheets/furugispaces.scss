@@ -41,6 +41,8 @@ header{
     }
     .header_if{
       display: flex;
+      height: 68px;
+      align-items: center;
       .registration{
         margin-right: 10px;
         .registration_box{
@@ -56,6 +58,24 @@ header{
           button:hover{
             background-color: #FF9D30;
             color: #fff;
+            transition: 0.3s;
+          }
+        }
+      }
+      .mypage{
+        .mypage_box{
+          a{
+            background-color: #FF9D30;
+            padding: 27px 4px;
+            border: 1px solid #FF9D30;
+            border-radius: 50%;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+          }
+          a:hover{
+            background-color: #fff;
+            color: #FF9D30;
             transition: 0.3s;
           }
         }
