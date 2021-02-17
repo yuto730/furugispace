@@ -28,6 +28,11 @@
             <p>ユーザーログアウト</p>
           </div>
         <% end %>
+        <div class="mypage">
+          <div class="mypage_box">
+            <%= link_to "マイページ", "/users/#{current_user.id}" %>
+          </div>
+        </div>
       <% elsif store_signed_in? %>
         <%= link_to(destroy_store_session_path, method: :delete) do %>
           <div>

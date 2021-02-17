@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   }
   root to: "furugispaces#index"
   resources :furugispaces
+  #ユーザーページ遷移
+  resources :users, only: :show do
+    get '/mypage' => 'users#mypage'
+  end
   # ニュースページ遷移
   resources :notices
   # イベントページ推移
