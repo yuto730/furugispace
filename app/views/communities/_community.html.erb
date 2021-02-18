@@ -1,0 +1,12 @@
+<div class="mypage_community_content">
+  <% user.communities.each do |community| %>
+    <%= link_to community_path(community.id), class: 'mypage_community_box' do %>
+      <div class="mypage_community_img">
+        <%= image_tag community.image %>
+        <div class="mypage_community_info">
+          <%= community.community_title.truncate(12) %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

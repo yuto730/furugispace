@@ -1,5 +1,5 @@
 <div class="mypage_coordination_content">
-  <% @user.coordinations.each do |coordination| %>
+  <% user.coordinations.each do |coordination| %>
     <%= link_to coordination_path(coordination.id), class: 'mypage_coordination_box' do %>
       <div class="mypage_coordination_img">
         <%= image_tag coordination.image %>
