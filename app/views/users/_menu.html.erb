@@ -1,0 +1,24 @@
+<div class="sub_block">
+  <div class="side_box">
+    <div class="user_info">
+      <h3>
+        <%= @user.user_nickname %>
+      </h3>
+      <p>
+        <%= @user.user_profile %>
+      </p>
+    </div>
+  </div>
+  <div class="side_box">
+    <div class="mypage_side_menu">
+      <p class="mypage_menu">メニュー</p>
+      <ul>
+        <li><%= link_to "コーディネート", root_path %></li>
+        <li><%= link_to "コミュニティ", root_path %></li>
+        <li><%= link_to "参加コミュニティ", root_path %></li>
+        <li><%= link_to "プロフィールを編集", edit_user_registration_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+</div>
