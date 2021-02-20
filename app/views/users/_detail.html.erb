@@ -5,7 +5,11 @@
   <div class="user_info_bar">
     <div class="info_bar_box">
       <div class="user_img">
-        <%= image_tag "icon.png"%>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <% else %>
+          <%= image_tag "icon.png" %>
+        <% end %>
       </div>
       <div id="user_nav">
         <ul class="user_nav">
