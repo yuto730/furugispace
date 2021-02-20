@@ -107,14 +107,13 @@
       padding-bottom: 15px;
       li{
         width: 100%;
-        a{
-          text-align: center;
+        cursor: pointer;
+        text-align: center;
           display: block;
           padding: 0 0 10px;
           font-size: 20px;
           font-weight: bold;
           border-bottom: 3px solid #aaa;
-        }
       }
     }
     .mypage_coordination{
@@ -172,6 +171,16 @@
           }
         }
       }
+    }
+    .tab-active {
+      color: #FF9D30;
+      border-bottom: 3px solid #FF9D30;
+    }
+    .tabbox{
+      display: none;
+    }
+    .box-show {
+      display: block;
     }
   }
 }
