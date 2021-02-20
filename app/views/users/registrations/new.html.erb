@@ -21,9 +21,14 @@
       <%= f.password_field :password, placeholder: "半角英数6文字以上", autocomplete: "new-password" %>
     </div>
 
-    <div class="user_new_field user_new_field_last">
+    <div class="user_new_field">
       <label>パスワードの確認<span>必須</span></label>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="user_new_field user_new_field_last">
+      <label>アイコン画像</label>
+      <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar" %>
     </div>
 
     <div class="user_new_actions">

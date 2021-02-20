@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :coordinations
   has_many :comments
 
+  has_one_attached :avatar
+
   validates :user_nickname, presence: true
 end

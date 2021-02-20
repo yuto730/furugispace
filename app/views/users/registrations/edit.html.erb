@@ -32,6 +32,11 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
+      <div class="field" >
+        <label>アイコン画像</label>
+        <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar" %>
+      </div>
+
       <div class="field">
         <label>現在のパスワード</label><br>
         <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"変更を確認するには、現在のパスワードが必要です" %>
