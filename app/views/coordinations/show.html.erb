@@ -2,10 +2,12 @@
 
 <div id="coordination_show">
   <div class="coordination_show">
-    <div class="coordination_show_info">
-      <%= image_tag "icon.png" %>
-      <h3><%= @coordination.user.user_nickname %></h3>
-    </div>
+    <%= link_to user_path(@coordination.user.id) do %>
+      <div class="coordination_show_info">
+        <%= image_tag "icon.png" %>
+        <h3><%= @coordination.user.user_nickname %></h3>
+      </div>
+    <% end %>
     <div class="coordination_button">
       <% if user_signed_in? %>
         <% if current_user.id == @coordination.user_id %>
@@ -16,6 +18,7 @@
             <%= image_tag "icon2.png" %>
           </div>
           <button>フォローする</button>
+          <%#= render "relationships/follow", user: @user %>
         <% end %>
       <% end %>
     </div>

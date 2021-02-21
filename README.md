@@ -32,6 +32,17 @@
 - has_many :community_users
 - has_many :coordinations
 - has_many :comments
+- has_many :follow
+
+
+## users テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| follow | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
 
 
 ## notices テーブル
@@ -132,4 +143,4 @@
 - belongs_to :coordination
 
 # ER図
-![furugispace](https://user-images.githubusercontent.com/72351740/107221316-cf256c00-6a56-11eb-8ff7-24a7f2b09680.png)
+![furugispace](https://user-images.githubusercontent.com/72351740/108597284-9a58d380-73cb-11eb-8b98-1b27e8367a8a.png)
