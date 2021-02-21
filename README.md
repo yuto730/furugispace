@@ -35,7 +35,7 @@
 - has_many :follow
 
 
-## users テーブル
+## Relationships テーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
