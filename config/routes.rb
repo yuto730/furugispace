@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :relationships, only: [:create, :destroy]
+
   root to: "furugispaces#index"
   resources :furugispaces
   #ユーザーページ遷移
