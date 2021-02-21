@@ -13,10 +13,19 @@
       </div>
       <div id="user_nav">
         <ul class="user_nav">
-          <li>フォロー中</li>
-          <li>フォロワー</li>
+          <li><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></li>
+          <li><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></li>
           <li>コミュニティ</li>
         </ul>
+        <% if signed_in? && @user != current_user%>
+          <div id="follow_form">
+            <% if current_user.following?(@user) %>
+              <%= render "relationships/unfollow" %>
+            <% else %>
+              <%= render "relationships/follow" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
