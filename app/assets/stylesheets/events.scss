@@ -500,3 +500,204 @@
     }
   }
 }
+//イベント詳細
+#event_show{
+  width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  .event_show{
+    width: 860px;
+    .event_date{
+      font-size: 14px;
+      text-align: right;
+    }
+    h3{
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin: 25px 0;
+    }
+    h6{
+      font-size: 12px;
+      padding-bottom: 15px;
+      border-bottom:1px solid #000000;
+    }
+    .event_show_thumbnail{
+      margin-top: 20px;
+      img{
+        height: 520px;
+        width: 860px;
+        object-fit: cover;
+      }
+    }
+    .event_show_heading{
+      border-bottom: 1px dotted #333333;
+      h3{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+        margin: 30px 0 20px;
+      }
+    }
+    .event_show_image{
+      margin-top: 20px;
+      img{
+        height: 520px;
+        width: 860px;
+        object-fit: cover;
+      }
+    }
+    .event_show_description{
+      letter-spacing: 0.8px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+    .event_information{
+      margin-top: 50px;
+      height: 700px;
+      border: 15px solid #FFD1A2;
+      border-radius: 30px;
+      .event_information_title{
+        margin-top: 35px;
+        p{
+          text-align: center;
+          font-size: 24px;
+        }
+      }
+      table{
+        margin: 35px 0 0 30px;
+        tr{
+          height: 30px;
+          th{
+            width: 70px;
+          }
+        }
+      }
+    }
+    .event_organizer_main{
+      margin-top: 60px;
+      padding: 20px;
+      border-top: 2px solid #333333;
+      border-bottom: 2px solid #333333;
+      .event_organizer_primary{
+        display: flex;
+        justify-content: space-between;
+        .event_organizer_title{
+        }
+        button{
+          text-align: center;
+          border-radius: 30px;
+          border: 1px solid #FF9D30;
+          color: #EF6537;
+          padding: 10px 20px;
+        }
+        button:hover{
+          background-color: #FF9D30;
+          color: #fff;
+          transition: 0.3s;
+        }
+      }
+      .event_organizer_charge{
+        display: flex;
+        margin-top: 20px;
+        img{
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+        }
+        .event_charge_title{
+          padding-left: 20px;
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        .store_charge_profile{
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  .event_side{
+    width: 310px;
+    .event_side_btn{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      .event_side_edit_btn{
+        p{
+          text-align: center;
+          border-radius: 30px;
+          border: 1px solid #FF9D30;
+          color: #EF6537;
+          padding: 10px 20px;
+        }
+        p:hover{
+          background-color: #FF9D30;
+          color: #fff;
+          transition: 0.3s;
+        }
+      }
+      .event_side_des_btn{
+        p{
+          text-align: center;
+          border-radius: 30px;
+          border: 1px solid #FF9D30;
+          color: #EF6537;
+          padding: 10px 20px;
+        }
+        p:hover{
+          background-color: #FF9D30;
+          color: #fff;
+          transition: 0.3s;
+        }
+      }
+    }
+    .event_side_title{
+      h4{
+        width: 285px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 2px solid #D6D6D6;
+        padding: 10px;
+        border-radius: 30px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .event_side_bgc{
+        position: relative;
+        bottom: 22px;
+        background-color: #F5F5F5;
+        padding: 20px 12px;
+        border-radius: 10px;
+        z-index: -1;
+        .event_side_content{
+          padding: 15px 0;
+          border-bottom: 1px solid #333;
+          .event_side_img{
+            img{
+              width: 285px;
+              height: 200px;
+              border-radius: 20px;
+              object-fit: cover;
+            }
+          }
+          .event_side_text{
+            font-size: 18px;
+            margin-left: 12px;
+            padding-top: 20px;
+          }
+          .event_side_day{
+            padding-top: 15px;
+            font-size: 14px;
+            color: #707070;
+          }
+          .event_side_venue{
+            padding-top: 15px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<%= render "shared/header" %>
+
+<div id="event_show">
+  <div class="event_show">
+    <p class="event_date">
+      <%= @event.created_at.strftime("%Y/%m/%d")%>
+    </p>
+    <h3>
+      <%= @event.event_title %>
+    </h3>
+    <h6><%=@event.start_on%>&nbsp;〜&nbsp;<%=@event.end_on%></h6>
+    <div class="event_show_thumbnail">
+      <%= image_tag @event.thumbnail %>
+    </div>
+    <div class="event_show_heading">
+      <h3>
+        <%= @event.event_heading %>
+      </h3>
+    </div>
+    <div class="event_show_image">
+      <%= image_tag @event.image %>
+    </div>
+    <div class="event_show_description">
+      <%= @event.event_description %>
+    </div>
+    <div class="event_information">
+      <div class="event_information_title">
+        <p>・・・・・イベント開催情報・・・・・</p>
+      </div>
+      <table>
+        <tr>
+          <th>開催期間</th><td>:&nbsp;<%=@event.start_on%>&nbsp;〜&nbsp;<%=@event.end_on%></td>
+        </tr>
+        <tr>
+          <th>参加費</th><td>:&nbsp;<%=@event.entry_fee%></td>
+        </tr>
+        <tr>
+          <th>開催場所</th><td>:&nbsp;<%=@event.venue%></td>
+        </tr>
+        <tr>
+          <th>住所</th><td>:&nbsp;<%=@event.event_address%></td>
+        </tr>
+      </table>
+    </div>
+    <div class ="event_organizer_main">
+      <div class="event_organizer_primary">
+        <div class="event_organizer_title">
+          <p>イベント主催者<p>
+        </div>
+        <div class="store_information">
+          <button>フォローする</button>
+        </div>
+      </div>
+      <div class="event_organizer_charge">
+        <div>
+          <%= image_tag "icon.png" %>
+        </div>
+        <div>
+          <div class="event_charge_title">
+            <%= @event.store.store_nickname%>
+          </div>
+          <div class="store_charge_profile">
+            <p>店舗プロフィール</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%# サイドバー↓%>
+  <div class="event_side">
+    <% if store_signed_in? %>
+      <% if @event.store.id == current_store.id %>
+        <div class="event_side_btn">
+          <div class="event_side_edit_btn">
+            <%= link_to(edit_event_path(@event.id), method: :get) do %>
+              <p>
+                イベントを編集
+              </p>
+            <% end %>
+          </div>
+          <div class="event_side_des_btn">
+            <%= link_to(event_path(@event.id), method: :delete) do %>
+              <p>
+                イベントを削除
+              </p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+      <div class="event_side_title">
+        <h4>
+          最新のイベント
+        </h4>
+        <div class="event_side_bgc">
+          <% @events.first(3).each do |event| %>
+            <div class="event_side_content">
+              <div class="event_side_img">
+                <%= image_tag event.thumbnail %>
+              </div>
+              <div class="event_side_text">
+                <%= event.event_title %>
+              </div>
+              <div class="event_side_day">
+                &nbsp;<%=@event.start_on%>&nbsp;〜&nbsp;<%=@event.end_on%>
+              </div>
+              <div class="event_side_venue">
+                <%=@event.prefecture.name%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+
+<%= render "shared/footer" %>
