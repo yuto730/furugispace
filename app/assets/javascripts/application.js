@@ -2,3 +2,4 @@
 //= require react_ujs
 //= require jquery
 //= require jquery_ujs
+//= require cocoon

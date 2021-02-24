@@ -22,7 +22,7 @@
     </div>
 
     <div id="coordination_form_box">
-      <div class="coordination_form_box">
+      <div class="coordination_form_box" id="form_block[0]">
         <div class="coordination_hash">
           <label>商品<span>必須</span></label><br>
           <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
@@ -36,11 +36,11 @@
         </div>
       </div>
       <div class="coordination_creat_action">
-        <button><i class="fas fa-plus"></i>追加</button>
+        <button class="add"><i class="fas fa-plus"></i>追加</button>
       </div>
     </div>
 
-    <div class="coordination_form_action">
+    <div class="coordination_form_action" id="form_add">
       <%= f.submit "作成する" %>
     </div>
 
