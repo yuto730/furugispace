@@ -21,22 +21,12 @@
       <%= f.text_area :coordination_profile %>
     </div>
 
-    <div id="coordination_form_box">
-      <div class="coordination_form_box" id="form_block[0]">
-        <div class="coordination_hash">
-          <label>商品<span>必須</span></label><br>
-          <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
-        </div>
-        <div class="coordination_hash">
-          <label>商品説明<span>必須</span></label><br>
-          <%= f.text_field :item_text %>
-        </div>
-        <div class="coordination_delite_action">
-          <button><i class="fas fa-minus"></i>削除</button>
-        </div>
-      </div>
-      <div class="coordination_creat_action">
-        <button class="add"><i class="fas fa-plus"></i>追加</button>
+    <div>
+      <%= f.fields_for :coordination_items do |t| %>
+        <%= render "coordinations/coordination_item_fields", f: t %>
+      <% end %>
+      <div class="coordination_add">
+        <%= link_to_add_association "追加", f, :coordination_items %>
       </div>
     </div>
 

@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <div class="coordination_hash">
+    <label>商品<span>必須</span></label><br>
+    <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select"}) %>
+  </div>
+  <div class="coordination_hash">
+    <label>商品説明<span>必須</span></label><br>
+    <%= f.text_field :item_text %>
+  </div>
+  <div class="coordination_remove">
+    <%= link_to_remove_association "削除", f %>
+  </div>
+</div>
