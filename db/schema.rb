@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_065227) do
+ActiveRecord::Schema.define(version: 2021_03_05_032051) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -61,10 +61,18 @@ ActiveRecord::Schema.define(version: 2021_02_21_065227) do
     t.index ["user_id"], name: "index_community_users_on_user_id"
   end
 
+  create_table "coordination_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "coordination_id", null: false
+    t.integer "item_id", null: false
+    t.string "item_text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coordination_id"], name: "index_coordination_items_on_coordination_id"
+  end
+
   create_table "coordinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_id"
-    t.string "item_text"
-    t.bigint "store_id", null: false
+    t.string "coordination_title", null: false
+    t.text "coordination_profile"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -155,7 +163,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_065227) do
   add_foreign_key "communities", "users"
   add_foreign_key "community_users", "communities"
   add_foreign_key "community_users", "users"
-  add_foreign_key "coordinations", "stores"
+  add_foreign_key "coordination_items", "coordinations"
   add_foreign_key "coordinations", "users"
   add_foreign_key "events", "stores"
   add_foreign_key "messages", "communities"

@@ -8,6 +8,7 @@ class CoordinationsController < ApplicationController
 
   def new
     @coordination = Coordination.new
+    @coordination_items = @coordination.coordination_items.build
   end
 
   def create
@@ -50,7 +51,7 @@ class CoordinationsController < ApplicationController
   private
 
   def coordination_params
-    params.require(:coordination).permit(:coordination_title, :image, :coordination_profile, :item_id, :item_text).merge(user_id: current_user.id)
+    params.require(:coordination).permit(:coordination_title, :image, :coordination_profile, coordination_items_attributes: [:id, :item_id, :item_text, :_destroy]).merge(user_id: current_user.id)
   end
 
   def set_item
