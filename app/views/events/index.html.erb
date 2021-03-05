@@ -7,7 +7,7 @@
     <div class="event_content">
       <div class="event_flex">
         <% @events.each do |event|%>
-          <%#= link_to notice_path(notice.id), method: :get do %>
+          <%= link_to event_path(event.id), method: :get do %>
             <div class="event_box">
               <div class="event_img">
                 <%= image_tag event.thumbnail %>
@@ -18,7 +18,7 @@
                 </div>
               </div>
             </div>
-          <%# end %>
+          <% end %>
         <% end %>
       </div>
       <ul>
