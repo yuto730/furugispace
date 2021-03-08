@@ -4,7 +4,13 @@
   <div class="coordination_show">
     <%= link_to user_path(@coordination.user.id) do %>
       <div class="coordination_show_info">
-        <%= image_tag "icon.png" %>
+        <div class="user_img">
+          <% if @coordination.user.avatar.attached? %>
+            <%= image_tag @coordination.user.avatar %>
+          <% else %>
+            <%= image_tag "icon.png" %>
+          <% end %>
+        </div>
         <h3><%= @coordination.user.user_nickname %></h3>
       </div>
     <% end %>
@@ -77,10 +83,12 @@
         </div>
         <div class="coordination_rightbox3">
           <table>
+            <% @coordination.coordination_items.each do |coordination| %>
             <tr>
-              <th><%= @coordination_items.item.name %>：</th>
-              <td><%= @coordination_items.item_text %></td>
+              <th><%= coordination.item_id %>：</th>
+              <td><%= coordination.item_text %></td>
             </tr>
+            <% end %>
           </table>
         </div>
         <div class="coordination_rightbox4">

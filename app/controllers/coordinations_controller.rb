@@ -8,7 +8,7 @@ class CoordinationsController < ApplicationController
 
   def new
     @coordination = Coordination.new
-    @coordination_items = @coordination.coordination_items.build
+    @coordination_items = @coordination.coordination_items.new
   end
 
   def create
