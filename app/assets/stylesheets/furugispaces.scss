@@ -327,30 +327,23 @@ header{
   .top_coordination_flex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     .top_coordination_box{
-      width: 270px;
-      margin: 30px 15px 0;
+      width: 260px;
+      margin: 30px 12px 0;
+      background-color: #fcfcfc;
       .top_coordination_img{
         position: relative;
         display: block;
         img{
-          width: 270px;
-          height: 220px;
+          width: 260px;
+          height: 320px;
           object-fit: cover;
-          border-radius: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
         }
         .top_coordination_info{
-          padding: 50px 10px 20px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          z-index: 2;
-          border-radius: 0 0 10px 10px;
-          background: linear-gradient(to bottom,transparent,rgba(30, 30, 30, 0.7) 30%,rgba(30, 30, 30, 0.7));
-          h3{
-            color: #fff;
-          }
+          padding: 15px 5px;
+          border-bottom-left-radius: 10px;
         }
       }
     }

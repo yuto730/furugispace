@@ -1,5 +1,5 @@
 class NoticesController < ApplicationController
-  before_action :set_notice, only: [:show, :edit, :update, :destroy,]
+  before_action :set_notice, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_store!, only: [:new, :edit]
   before_action :move_to_index, only: [:edit, :update, :destory]
 
@@ -13,7 +13,7 @@ class NoticesController < ApplicationController
   end
 
   def create
-    notice = Notice.new(notice_params)
+    notice = Notice.create(notice_params)
     if notice.save
       redirect_to root_path
     else
