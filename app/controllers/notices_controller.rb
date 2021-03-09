@@ -1,8 +1,7 @@
 class NoticesController < ApplicationController
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_store!, only: [:new, :edit]
-  before_action :move_to_index, only: [:edit, :update, :destory]
-
+  before_action :set_notice, only: %i[show edit update destroy]
+  before_action :authenticate_store!, only: %i[new edit]
+  before_action :move_to_index, only: %i[edit update destory]
 
   def index
     @notices = Notice.page(params[:page]).per(3)
@@ -22,11 +21,10 @@ class NoticesController < ApplicationController
   end
 
   def show
-    @notices = Notice.order("created_at DESC")
+    @notices = Notice.order('created_at DESC')
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @notice.update(notice_params)
@@ -41,11 +39,11 @@ class NoticesController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
   def notice_params
-    params.require(:notice).permit(:notice_title, :thumbnail, :notice_display, :notice_heading, :image, :notice_description).merge(store_id: current_store.id)
+    params.require(:notice).permit(:notice_title, :thumbnail, :notice_display, :notice_heading, :image,
+                                   :notice_description).merge(store_id: current_store.id)
   end
 
   def set_notice
@@ -53,9 +51,6 @@ class NoticesController < ApplicationController
   end
 
   def move_to_index
-    unless @notice.store_id == current_store.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless @notice.store_id == current_store.id
   end
-
 end

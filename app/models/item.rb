@@ -34,6 +34,6 @@ class Item < ActiveHash::Base
     { id: 32, name: 'アウトドア/スポーツ' },
     { id: 33, name: 'ペットグッズ' },
     { id: 34, name: '音楽/本・雑誌' },
-    { id: 35, name: 'その他' },
+    { id: 35, name: 'その他' }
   ]
-  end
+end

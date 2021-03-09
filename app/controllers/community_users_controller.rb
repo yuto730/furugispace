@@ -1,5 +1,5 @@
 class CommunityUsersController < ApplicationController
-  before_action :set_room, only: [:create, :destroy]
+  before_action :set_room, only: %i[create destroy]
 
   def create
     if CommunityUser.create(user_id: @user.id, community_id: @community.id)
@@ -10,7 +10,7 @@ class CommunityUsersController < ApplicationController
   end
 
   def destroy
-    if room=CommunityUser.find_by(user_id: @user.id, community_id: @community.id)
+    if room = CommunityUser.find_by(user_id: @user.id, community_id: @community.id)
       room.delete
       redirect_to @community
     else

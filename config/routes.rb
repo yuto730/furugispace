@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
   devise_for :stores, controllers: {
-    sessions:      'stores/sessions',
-    passwords:     'stores/passwords',
+    sessions: 'stores/sessions',
+    passwords: 'stores/passwords',
     registrations: 'stores/registrations'
   }
   devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
 
-  root to: "furugispaces#index"
+  root to: 'furugispaces#index'
   resources :furugispaces
-  #ユーザーページ遷移
+  # ユーザーページ遷移
   resources :users, only: :show do
     get '/mypage' => 'users#mypage'
     member do
       get :following, :followers
     end
   end
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: %i[create destroy]
   # ニュースページ遷移
   resources :notices
   # イベントページ推移

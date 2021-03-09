@@ -1,9 +1,9 @@
 class CommunitiesController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit destroy]
 
   def index
-    @communities = Community.order("created_at DESC").page(params[:page]).per(9)
+    @communities = Community.order('created_at DESC').page(params[:page]).per(9)
   end
 
   def new
@@ -25,9 +25,7 @@ class CommunitiesController < ApplicationController
   end
 
   def edit
-    if @community.user_id != current_user.id
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path if @community.user_id != current_user.id
   end
 
   def update
@@ -58,9 +56,6 @@ class CommunitiesController < ApplicationController
   end
 
   def set_user_id_to_cookie
-    if cookies.signed['user_id'].blank?
-      cookies.signed['user_id'] = current_user.id
-    end
+    cookies.signed['user_id'] = current_user.id if cookies.signed['user_id'].blank?
   end
-
 end

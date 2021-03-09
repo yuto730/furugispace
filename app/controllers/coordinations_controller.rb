@@ -1,9 +1,9 @@
 class CoordinationsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new edit destroy]
 
   def index
-    @coordinations = Coordination.order("created_at DESC").page(params[:page]).per(9)
+    @coordinations = Coordination.order('created_at DESC').page(params[:page]).per(9)
   end
 
   def new
@@ -26,9 +26,7 @@ class CoordinationsController < ApplicationController
   end
 
   def edit
-    if @coordination.user_id != current_user.id
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path if @coordination.user_id != current_user.id
   end
 
   def update
@@ -51,7 +49,8 @@ class CoordinationsController < ApplicationController
   private
 
   def coordination_params
-    params.require(:coordination).permit(:coordination_title, :image, :coordination_profile, coordination_items_attributes: [:id, :item_id, :item_text, :_destroy]).merge(user_id: current_user.id)
+    params.require(:coordination).permit(:coordination_title, :image, :coordination_profile,
+                                         coordination_items_attributes: %i[id item_id item_text _destroy]).merge(user_id: current_user.id)
   end
 
   def set_item

@@ -1,7 +1,6 @@
 class MessageBroadcastJob < ApplicationJob
   def perform(message)
     ActionCable.server.broadcast "community_channel#{message.community_id}", message: render_message(message)
-
   end
 
   private
