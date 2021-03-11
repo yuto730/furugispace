@@ -24,8 +24,8 @@
     <div class="header_if">
       <% if user_signed_in? %>
         <%= link_to(destroy_user_session_path, method: :delete) do %>
-          <div>
-            <p>ユーザーログアウト</p>
+          <div class="logout">
+            <p>ログアウト</p>
           </div>
         <% end %>
         <div class="mypage">
@@ -35,8 +35,8 @@
         </div>
       <% elsif store_signed_in? %>
         <%= link_to(destroy_store_session_path, method: :delete) do %>
-          <div>
-            <p>店舗ログアウト</p>
+          <div class="logout">
+            <p>ログアウト</p>
           </div>
         <% end %>
       <% else %>

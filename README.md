@@ -156,7 +156,7 @@ FurugiSpace
 ![furugispace](https://user-images.githubusercontent.com/72351740/108597284-9a58d380-73cb-11eb-8b98-1b27e8367a8a.png)
 
 # 開発環境
-- Ruby   : 2.6.5p114
+- Ruby   : 2.6.6p146
 - Rails  : 6.0.3.4
 - jQuery : 1.12.4
 - React  : 17.0.1
