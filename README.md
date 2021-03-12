@@ -40,6 +40,11 @@ FurugiSpace
 
 <br>
 
+## コーディネートへのコメント
+[![Image from Gyazo](https://i.gyazo.com/ae39a5b3aa8aa1acf84312469564189c.gif)](https://gyazo.com/ae39a5b3aa8aa1acf84312469564189c)
+
+<br>
+
 ## マイページ
 [![Image from Gyazo](https://i.gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a.gif)](https://gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a)
 
