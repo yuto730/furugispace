@@ -55,7 +55,7 @@
             <% end %>
           </div>
           <div class="coordination_comment_action">
-            <% if user_signed_in? %>
+            <% if user_signed_in? || store_signed_in? %>
               <%= form_with(model: [@coordination, @comment], local: true) do |form| %>
                 <%= form.text_area :text, placeholder: "コメントを書く", rows: "3" %>
                 <%= form.submit "送信" %>
