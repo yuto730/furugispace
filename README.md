@@ -15,6 +15,11 @@ FurugiSpace
 
 <br>
 
+## 新規会員登録/ログイン
+[![Image from Gyazo](https://i.gyazo.com/f6358719de541657cc87d3b9a6290a0b.gif)](https://gyazo.com/f6358719de541657cc87d3b9a6290a0b)
+
+<br>
+
 ## お知らせページ
 [![Image from Gyazo](https://i.gyazo.com/a9178c995be585fb38a601c74eef0e41.png)](https://gyazo.com/a9178c995be585fb38a601c74eef0e41)
 
