@@ -52,8 +52,12 @@
         </div>
       </div>
       <div class="event_organizer_charge">
-        <div>
-          <%= image_tag "icon.png" %>
+        <div class="store_img">
+          <% if @event.store.avatar.attached? %>
+            <%= image_tag @event.store.avatar %>
+          <% else %>
+            <%= image_tag "icon.png" %>
+          <% end %>
         </div>
         <div>
           <div class="event_charge_title">

@@ -150,7 +150,6 @@ header{
   .top_news_flex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     .top_news_box{
       width: 270px;
       margin: 30px 15px 0;
@@ -215,7 +214,6 @@ header{
   .top_event_flex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     .top_event_box{
       width: 270px;
       margin: 30px 15px 0;
@@ -231,17 +229,18 @@ header{
       .top_event_info{
         border-bottom: 1px solid #333;
         padding-bottom: 20px;
+        p{
+          margin-top: 10px;
+          font-size: 12px;
+          color: #FF9D30;
+        }
         h3{
           margin: 12px 0;
           font-size: 18px;
         }
         time{
           margin-bottom: 10px;
-          font-size: 14px;
-        }
-        p{
-          margin-top: 15px;
-          font-size: 14px;
+          font-size: 12px;
         }
       }
     }
@@ -281,7 +280,6 @@ header{
   .top_community_flex{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     .top_community_box{
       width: 270px;
       margin: 30px 15px 0;

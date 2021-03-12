@@ -7,6 +7,8 @@ class Store < ApplicationRecord
   has_many :notices
   has_many :events
 
+  has_one_attached :avatar
+
   with_options presence: true do
     validates :store_nickname
     validates :address

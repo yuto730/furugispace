@@ -1,0 +1,26 @@
+<div class="sub_block">
+  <div class="side_box">
+    <div class="store_info">
+      <h3>
+        <%= @store.store_nickname %>
+      </h3>
+      <p>
+        <%= @store.store_profile %>
+      </p>
+    </div>
+  </div>
+  <div class="side_box">
+    <div class="mypage_side_menu">
+      <p class="mypage_menu">メニュー</p>
+      <ul>
+        <li><%= link_to "コーディネート", store_path(@store.id) %></li>
+        <li><%= link_to "コミュニティ", store_path(@store.id) %></li>
+        <li><%= link_to "参加コミュニティ", store_path(@store.id) %></li>
+        <% if @store.id == current_store.id %>
+          <li><%= link_to "プロフィールを編集", edit_store_registration_path %></li>
+          <li><%= link_to "ログアウト", destroy_store_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

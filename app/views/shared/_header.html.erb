@@ -39,6 +39,11 @@
             <p>ログアウト</p>
           </div>
         <% end %>
+        <div class="mypage">
+          <div class="mypage_box">
+            <%= link_to "マイページ", "/stores/#{current_store.id}" %>
+          </div>
+        </div>
       <% else %>
         <%= react_component("Registration") %>
         <%= react_component("Session") %>
