@@ -11,12 +11,12 @@ FurugiSpace
 # 実装した機能についての説明
 
 ## トップページ
-[![Image from Gyazo](https://i.gyazo.com/048691dae21cbd707b57c3371e37a30a.gif)](https://gyazo.com/048691dae21cbd707b57c3371e37a30a)
+![048691dae21cbd707b57c3371e37a30a](https://user-images.githubusercontent.com/72351740/110898058-e602fb00-8341-11eb-84fb-88ed92cba855.gif)
 
 <br>
 
 ## お知らせページ
-[![Image from Gyazo](https://i.gyazo.com/cf5ba0a6e2d2d6daddc879797991910d.png)](https://gyazo.com/cf5ba0a6e2d2d6daddc879797991910d)
+[![Image from Gyazo](https://i.gyazo.com/a9178c995be585fb38a601c74eef0e41.png)](https://gyazo.com/a9178c995be585fb38a601c74eef0e41)
 
 <br>
 
