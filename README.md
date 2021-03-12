@@ -8,6 +8,38 @@ FurugiSpace
 - 店舗ユーザーでは、全ての投稿が可能
 - 一般ユーザーでは、コミュニティの作成・参加 , コーディネートの投稿が可能
 
+# 実装した機能についての説明
+
+## トップページ
+[![Image from Gyazo](https://i.gyazo.com/048691dae21cbd707b57c3371e37a30a.gif)](https://gyazo.com/048691dae21cbd707b57c3371e37a30a)
+
+<br>
+
+## お知らせページ
+[![Image from Gyazo](https://i.gyazo.com/cf5ba0a6e2d2d6daddc879797991910d.png)](https://gyazo.com/cf5ba0a6e2d2d6daddc879797991910d)
+
+<br>
+
+## イベントページ
+[![Image from Gyazo](https://i.gyazo.com/9e56ae2339bfd9bc7a7e9aba9e9aa640.png)](https://gyazo.com/9e56ae2339bfd9bc7a7e9aba9e9aa640)
+
+<br>
+
+## コミュニティページ
+[![Image from Gyazo](https://i.gyazo.com/05c89f7b1240fd609223f7a4faa0ae49.png)](https://gyazo.com/05c89f7b1240fd609223f7a4faa0ae49)
+
+<br>
+
+## コーディネートページ
+[![Image from Gyazo](https://i.gyazo.com/9abbab07f383c30f5fd5be112f6e8c2e.png)](https://gyazo.com/9abbab07f383c30f5fd5be112f6e8c2e)
+
+<br>
+
+## マイページ
+[![Image from Gyazo](https://i.gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a.gif)](https://gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a)
+
+<br>
+
 # データベース設計
 
 ## stores テーブル

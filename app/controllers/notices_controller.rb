@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   before_action :move_to_index, only: %i[edit update destory]
 
   def index
-    @notices = Notice.page(params[:page]).per(3)
+    @notices = Notice.page(params[:page]).per(9)
   end
 
   def new

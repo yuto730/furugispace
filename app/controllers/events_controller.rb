@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :move_to_index, only: %i[edit update destory]
 
   def index
-    @events = Event.page(params[:page]).per(3)
+    @events = Event.page(params[:page]).per(9)
   end
 
   def new
