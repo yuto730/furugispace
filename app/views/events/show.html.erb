@@ -53,15 +53,19 @@
       </div>
       <div class="event_organizer_charge">
         <div class="store_img">
-          <% if @event.store.avatar.attached? %>
-            <%= image_tag @event.store.avatar %>
-          <% else %>
-            <%= image_tag "icon.png" %>
+          <%= link_to store_path(@event.store.id) do %>
+            <% if @event.store.avatar.attached? %>
+              <%= image_tag @event.store.avatar %>
+            <% else %>
+              <%= image_tag "icon.png" %>
+            <% end %>
           <% end %>
         </div>
         <div>
           <div class="event_charge_title">
-            <%= @event.store.store_nickname%>
+            <%= link_to store_path(@event.store.id) do %>
+              <%= @event.store.store_nickname%>
+            <% end %>
           </div>
           <div class="store_charge_profile">
             <p>店舗プロフィール</p>
