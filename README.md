@@ -35,10 +35,19 @@ FurugiSpace
 
 <br>
 
+## コーディネート新規登録
+[![Image from Gyazo](https://i.gyazo.com/b42a9c9680f369cb6dd9a3cabb55bc65.gif)](https://gyazo.com/b42a9c9680f369cb6dd9a3cabb55bc65)
+
+<br>
+
 ## マイページ
 [![Image from Gyazo](https://i.gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a.gif)](https://gyazo.com/273ed7eebcb31f1f66cf72fbafd7844a)
 
-<br>
+# 実装予定の機能
+- 通知機能
+- 検索機能
+- コミュニティページにてActionCableを利用したチャット機能
+- レスポンシブ対応（タブレット,スマートフォン）
 
 # データベース設計
 
