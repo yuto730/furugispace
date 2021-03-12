@@ -27,18 +27,23 @@
     </div>
 
     <div class="store_new_field">
+      <label>アイコン画像</label>
+      <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar" %>
+    </div>
+
+    <div class="store_new_field">
       <label>住所<span>必須</span></label>
-      <%= f.text_field :address, autofocus: true, autocomplete: "email" %>
+      <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
     </div>
 
     <div class="store_new_field">
       <label>建物名</label>
-      <%= f.text_field :building, autofocus: true, autocomplete: "email" %>
+      <%= f.text_field :building, autofocus: true, autocomplete: "building" %>
     </div>
 
     <div class="store_new_field store_new_field_last">
       <label>電話番号<span>必須</span></label>
-      <%= f.text_field :phone_number, autofocus: true, autocomplete: "email" %>
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
     </div>
 
     <div class="store_new_actions">

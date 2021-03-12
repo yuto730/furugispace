@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+<%= render "detail" %>
+
+<div class="store_contents">
+  <%= render "menu" %>
+  <div class="main_block">
+    <ul>
+      <li class="tab tab-active">コーディネート</li>
+      <li class="tab">コミュニティ</li>
+    </ul>
+    <div class="mypage_coordination tabbox box-show">
+      <%#= render partial: 'coordinations/coordination', locals: { store: @store } %>
+    </div>
+    <div class="mypage_community tabbox">
+      <%#= render partial: 'communities/community', locals: { store: @store } %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

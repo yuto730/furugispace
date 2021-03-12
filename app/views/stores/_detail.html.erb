@@ -1,0 +1,41 @@
+<div id="store_detail">
+  <div class="store_detail_img">
+    <%= image_tag "header.png" %>
+  </div>
+  <div class="store_info_bar">
+    <div class="info_bar_box">
+      <div class="store_img">
+        <% if @store.avatar.attached? %>
+          <%= image_tag @store.avatar %>
+        <% else %>
+          <%= image_tag "icon.png" %>
+        <% end %>
+      </div>
+      <div id="store_nav">
+        <ul class="store_nav">
+          <%= link_to root_path(@store) do %>
+            <li>フォロー</li>
+            <li><%#= @store.followings.count %></li>
+          <% end %>
+          <%= link_to root_path(@store) do %>
+            <li>フォロワー</li>
+            <li><%#= @store.followers.count %></li>
+          <% end %>
+          <%= link_to root_path do %>
+            <li>コミュニティ</li>
+            <li><%#= @store.community_users.count %></li>
+          <% end %>
+        </ul>
+        <% if signed_in? && @store != current_store%>
+          <div id="follow_form">
+            <%# if current_store.following?(@store) %>
+              <%#= render "relationships/unfollow" %>
+            <%# else %>
+              <%#= render "relationships/follow" %>
+            <%# end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

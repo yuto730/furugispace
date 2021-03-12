@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   root to: 'furugispaces#index'
   resources :furugispaces
-  # ユーザーページ遷移
+  # 店舗ユーザーページ遷移
+  resources :stores, only: :show do
+    get '/mypage' => 'stores#mypage'
+  end
+  # 一般ユーザーページ遷移
   resources :users, only: :show do
     get '/mypage' => 'users#mypage'
     member do
