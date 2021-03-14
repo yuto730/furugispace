@@ -5,8 +5,6 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.boolean     :event_display, default: true, null: false
       t.string      :start_on,                     null: false
       t.text        :end_on,                       null: false
-      t.string      :event_heading,                null: false
-      t.text        :event_description,            null: false
       t.string      :entry_fee,                    null: false
       t.integer     :prefecture_id,                null: false
       t.string      :event_address,                null: false
