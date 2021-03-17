@@ -2,10 +2,9 @@ class Event < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :store
+  has_one_attached :thumbnail
   has_many :event_details, dependent: :destroy
   accepts_nested_attributes_for :event_details
-  has_one_attached :image
-  has_one_attached :thumbnail
 
   with_options presence: true do
     validates :event_title
