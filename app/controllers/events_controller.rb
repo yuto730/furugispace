@@ -44,7 +44,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:event_title, :thumbnail, :event_display, :start_on, :end_on, :entry_fee, :prefecture_id,
-                                  :event_address, :venue, event_details_attributes: %i[id event_id event_heading event_description _destroy]).merge(store_id: current_store.id)
+                                  :event_address, :venue, event_details_attributes: %i[id event_id event_heading image event_description _destroy]).merge(store_id: current_store.id)
   end
 
   def set_event
