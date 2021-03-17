@@ -12,17 +12,20 @@
     <div class="event_show_thumbnail">
       <%= image_tag @event.thumbnail %>
     </div>
-    <div class="event_show_heading">
-      <h3>
-        <%= @event.event_heading %>
-      </h3>
-    </div>
-    <div class="event_show_image">
-      <%= image_tag @event.image %>
-    </div>
-    <div class="event_show_description">
-      <%= @event.event_description %>
-    </div>
+    <% @event.event_details.each do |event| %>
+      <div class="event_show_heading">
+        <h3>
+          <%= event.event_heading %>
+        </h3>
+      </div>
+      <div class="event_show_image">
+        <%#= image_tag event.image %>
+      </div>
+      <div class="event_show_description">
+        <%= event.event_description %>
+      </div>
+    <% end %>
+
     <div class="event_information">
       <div class="event_information_title">
         <p>・・・・・イベント開催情報・・・・・</p>

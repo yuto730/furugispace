@@ -100,396 +100,126 @@
   }
 }
 //イベント投稿/編集
-#event_post{
-  width: 1200px;
-    margin: 80px auto ;
+#event_form{
+  width: 850px;
+  margin: 80px auto;
   h2{
     text-align: center;
     font-size: 30px;
   }
   form{
-    .event_title_main{
-      .event_title_primary{
-        display: flex;
-        margin-top: 35px;
-        .event_title_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-    }
-      .event_title_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        #event_event_title{
-          width: 1190px;
-        }
-      }
-      .event_title_quaternary{
-        margin-top: 8px;
-        p{
-          font-size: 12px;
-          color: #333;
-        }
-      }
-    .event_thumbnail_primary{
-      display: flex;
-      padding-top: 30px;
-      .event_thumbnail_secondary{
-        margin-right: 11px;
-        margin-top: 3px;
-        h3{
-          font-size: 18px;
-          font-weight: 900;
-        }
-      }
-      .event_common{
-        width: 54px;
-        background-color: #FFDE3B;
-        border-radius: 5px;
-        padding: 3px 15px;
+    margin-top: 40px;
+    .event_form_field{
+      margin-bottom: 30px;
+      label{
         span{
+          margin-left: 10px;
+          padding: 6px 10px;
+          border-radius: 5px;
+          background-color: #FFDE3B;
           font-size: 12px;
           font-weight: 900;
         }
       }
-    }
-    .event_thumbnail_box{
-      height: 136px;
-      border: 1px solid #D6D6D6;
-      background-color:#F8F8F8;
-      border-radius: 5px;
-      position: relative;
-      margin-top: 15px;
-      h3{
-        font-size: 18px;
-        font-weight: 0;
-        text-align: center;
-        padding-top: 32px;
-      }
-      #event_thumbnail{
-        font-size: 14px;
-        position: absolute;
-        top: 68px;
-        left: 535px;
-      }
-    }
-    .event_display_radio{
-      display: flex;
-      margin: 15px 0 30px 0;
-      .event_display_radio_true{
-        display: flex;
-        align-items: center;
-        input{
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
-        label{
-          font-size: 16px;
-        }
-      }
-      .event_display_radio_false{
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
-        input{
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
-        label{
-          font-size: 16px;
-        }
-      }
-    }
-    .event_start_on_main{
-      .event_start_on_primary{
-        display: flex;
-        .event_start_on_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_start_on_box{
-        padding: 10px;
+      input{
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 0 8px 10px;
         border: 1px solid #D6D6D6;
         border-radius: 5px;
-        margin-top: 15px;
-        width: 260px;
-        #event_start_on{
-          width: 248px;
-        }
       }
-    }
-    .event_end_on_main{
-      .event_end_on_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_end_on_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
+      .short_field{
+        width: 280px;
       }
-      .event_end_on_box{
-        padding: 10px;
+      .prefecture_select{
+        margin-top: 10px;
+        padding: 8px 0 8px 10px;
         border: 1px solid #D6D6D6;
         border-radius: 5px;
-        margin-top: 15px;
-        width: 260px;
-        #event_end_on{
-          width: 248px;
-        }
       }
-    }
-    .event_entry_fee_main{
-      .event_entry_fee_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_entry_fee_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_entry_fee_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        width: 260px;
-        #event_entry_fee{
-          width: 248px;
-        }
-      }
-    }
-    .event_prefecture_main{
-      .event_prefecture_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_prefecture_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_prefecture_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        width: 260px;
-        #event_prefecture_id{
-          width: 248px;
-        }
-      }
-    }
-    .event_event_address_main{
-      .event_event_address_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_event_address_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_event_address_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        #event_event_address{
-          width: 1190px;
-        }
-      }
-    }
-    .event_venue_main{
-      .event_venue_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_venue_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_venue_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        #event_venue{
-          width: 1190px;
-        }
-      }
-    }
-    .event_map_main{
-      .event_map_primary{
-        padding-top: 30px;
-        display: flex;
-        .event_map_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .event_common{
-          width: 54px;
-          background-color: #FFDE3B;
-          border-radius: 5px;
-          padding: 3px 15px;
-          span{
-            font-size: 12px;
-            font-weight: 900;
-          }
-        }
-      }
-      .event_map_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        #event_map{
-          width: 1190px;
-        }
-      }
-      .event_map_quaternary{
+      p{
+        margin-top: 8px;
         font-size: 12px;
-        margin: 10px 0;
       }
-      .event_map_fifthperiod{
-        font-size: 12px;
-        margin-bottom: 30px;
+      textarea{
+        width: 100%;
+        height: 120px;
+        margin-top: 10px;
+        padding: 8px 0 8px 10px;
+        border: 1px solid #D6D6D6;
+        border-radius: 5px;
+      }
+      .event_img{
+        width: 100%;
+        height: 120px;
+        background-color: #F8F8F8;
+        padding: 50px 0 50px 280px;
+        cursor: pointer;
       }
     }
-    .heading{
+    .nested-fields:first-child{
       border-top: 1px dotted #333;
     }
-    #event_image{
-      font-size: 14px;
-      position: absolute;
-      top: 68px;
-      left: 535px;
-    }
-    .description{
+    .nested-fields{
       border-bottom: 1px dotted #333;
-      .primary{
-        margin-bottom: 95px;
-        #event_event_description{
-          width: 1190px;
-          height: 180px;
+      padding: 30px 0;
+      .event_hash{
+        margin-bottom: 30px;
+        label{
+          span{
+            margin-left: 10px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background-color: #FFDE3B;
+            font-size: 12px;
+            font-weight: 900;
+          }
+        }
+        .item_select{
+          width: 280px;
+          margin-top: 10px;
+          padding: 8px 0 8px 10px;
+          border: 1px solid #D6D6D6;
+          border-radius: 5px;
+        }
+        input{
+          width: 850px;
+          margin-top: 10px;
+          padding: 8px 0 8px 10px;
+          border: 1px solid #D6D6D6;
+          border-radius: 5px;
+        }
+      }
+      .event_remove{
+        width: 120px;
+        margin: 0 0 0 auto;
+        .remove_fields{
+          padding: 10px 43px;
+          border: 1px solid #888;
+          border-radius: 5px;
         }
       }
     }
-    .event_btn{
-      margin: 100px auto 0;
-      width: 270px;
-      input{
-        text-align: center;
-        border-radius: 30px;
+    .event_add{
+      width: 160px;
+      margin: 30px 0 0 auto;
+      .add_fields{
+        padding: 10px 63px;
+        background-color: #FF9D30;
         border: 1px solid #FF9D30;
-        color: #FF9D30;
-        padding: 15px 0;
+        border-radius: 5px;
+        color: #fff;
+      }
+    }
+    .event_form_action{
+      margin-top: 60px;
+      text-align: center;
+      input{
         width: 270px;
+        padding: 15px 0;
+        border: 1px solid #FF9D30;
+        border-radius: 30px;
+        color: #FF9D30;
       }
       input:hover{
         background-color: #FF9D30;
@@ -499,6 +229,7 @@
     }
   }
 }
+
 //イベント詳細
 #event_show{
   width: 1200px;

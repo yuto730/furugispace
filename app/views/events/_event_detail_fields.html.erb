@@ -1,45 +1,17 @@
 <div class="nested-fields">
-  <div class="event_title_main heading">
-    <div class="event_title_primary">
-      <div class="event_title_secondary">
-        <h3>見出し</h3>
-      </div>
-      <div class="event_common">
-        <span>必須</span>
-      </div>
-      <div class="event_title_box">
-        <%= f.text_field :event_heading%>
-      </div>
-    </div>
+  <div class="event_form_field">
+    <label>見出し<span>必須</span></label><br>
+    <%= f.text_field :event_heading %>
   </div>
 
-  <div class="event_thumbnail_main">
-    <div class="event_thumbnail_primary">
-      <div class="event_thumbnail_secondary">
-        <h3>画像</h3>
-      </div>
-      <div class="event_common">
-        <span>必須</span>
-      </div>
-    </div>
-    <div class="event_thumbnail_box">
-      <h3>画像を登録</h3>
-      <%= f.file_field :image %>
-    </div>
+  <div class="event_form_field">
+    <label>画像<span>必須</span></label><br>
+    <%= f.file_field :image, class: "event_img" %>
   </div>
 
-  <div class="event_title_main description">
-    <div class="event_title_primary">
-      <div class="event_title_secondary">
-        <h3>本文</h3>
-      </div>
-      <div class="event_common">
-        <span>必須</span>
-      </div>
-    </div>
-    <div class="event_title_box primary">
-      <%= f.text_area :event_description %>
-    </div>
+  <div class="event_form_field">
+    <label>本文<span>必須</span></label><br>
+    <%= f.text_area :event_description %>
   </div>
 
   <div class="event_remove">
