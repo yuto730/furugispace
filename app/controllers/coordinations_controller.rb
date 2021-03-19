@@ -50,7 +50,7 @@ class CoordinationsController < ApplicationController
 
   def coordination_params
     params.require(:coordination).permit(:coordination_title, :image, :coordination_profile,
-                                         coordination_items_attributes: %i[id item_id item_text _destroy]).merge(user_id: current_user.id)
+                                          coordination_items_attributes: %i[id item_id item_text _destroy]).merge(user_id: current_user.id)
   end
 
   def set_item
