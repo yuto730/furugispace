@@ -1,5 +1,9 @@
 # アプリケーション名
-FurugiSpace
+
+#### FurugiSpace
+
+![048691dae21cbd707b57c3371e37a30a](https://user-images.githubusercontent.com/72351740/110898058-e602fb00-8341-11eb-84fb-88ed92cba855.gif)
+<br>
 
 # アプリケーション概要
 - 古着コミュニティサイト
@@ -8,12 +12,7 @@ FurugiSpace
 - 店舗ユーザーでは、全ての投稿が可能
 - 一般ユーザーでは、コミュニティの作成・参加 , コーディネートの投稿が可能
 
-# 実装した機能についての説明
-
-## トップページ
-![048691dae21cbd707b57c3371e37a30a](https://user-images.githubusercontent.com/72351740/110898058-e602fb00-8341-11eb-84fb-88ed92cba855.gif)
-
-<br>
+# 機能
 
 ## 新規会員登録/ログイン
 [![Image from Gyazo](https://i.gyazo.com/f6358719de541657cc87d3b9a6290a0b.gif)](https://gyazo.com/f6358719de541657cc87d3b9a6290a0b)
