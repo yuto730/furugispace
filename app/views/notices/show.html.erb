@@ -11,17 +11,19 @@
     <div class="notice_show_thumbnail">
       <%= image_tag @notice.thumbnail %>
     </div>
-    <div class="notice_show_heading">
-      <h3>
-        <%= @notice.notice_heading %>
-      </h3>
-    </div>
-    <div class="notice_show_image">
-      <%= image_tag @notice.image %>
-    </div>
-    <div class="notice_show_description">
-      <%= @notice.notice_description %>
-    </div>
+    <% @notice.notice_details.each do |notice| %>
+      <div class="notice_show_heading">
+        <h3>
+          <%= notice.notice_heading %>
+        </h3>
+      </div>
+      <div class="notice_show_image">
+        <%= image_tag notice.image %>
+      </div>
+      <div class="notice_show_description">
+        <%= notice.notice_description %>
+      </div>
+    <% end %>
   </div>
   <%# サイドバー↓%>
   <div class="notice_side">

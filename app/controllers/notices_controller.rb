@@ -9,6 +9,7 @@ class NoticesController < ApplicationController
 
   def new
     @notice = Notice.new
+    @notice_details = @notice.notice_details.new
   end
 
   def create
@@ -24,7 +25,9 @@ class NoticesController < ApplicationController
     @notices = Notice.order('created_at DESC')
   end
 
-  def edit; end
+  def edit
+    @notice_details = @notice.notice_details.build
+  end
 
   def update
     if @notice.update(notice_params)
@@ -42,8 +45,8 @@ class NoticesController < ApplicationController
   private
 
   def notice_params
-    params.require(:notice).permit(:notice_title, :thumbnail, :notice_display, :notice_heading, :image,
-                                   :notice_description).merge(store_id: current_store.id)
+    params.require(:notice).permit(:notice_title, :thumbnail, :notice_display,
+                                    notice_details_attributes: %i[id notice_id notice_heading image notice_description _destroy]).merge(store_id: current_store.id)
   end
 
   def set_notice

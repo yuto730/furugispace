@@ -1,4 +1,4 @@
-/* 古着ニュ-ス */
+/* お知らせ */
 #news{
   width: 1200px;
   margin: 80px auto ;
@@ -99,155 +99,149 @@
     }
   }
 }
-//ニュース投稿/編集
-#news_post{
-  width: 1200px;
-    margin: 80px auto ;
+
+/* お知らせ作成/編集 */
+#notice_form{
+  width: 850px;
+  margin: 80px auto;
   h2{
     text-align: center;
     font-size: 30px;
   }
   form{
-    .news_title_main{
-      .news_title_primary{
-        display: flex;
-        margin-top: 35px;
-        .news_title_secondary{
-          margin-right: 11px;
-          margin-top: 3px;
-          h3{
-            font-size: 18px;
-            font-weight: 900;
-          }
-        }
-        .news_common{
-          width: 54px;
-          background-color: #FFDE3B;
+    margin-top: 40px;
+    .notice_form_field{
+      margin-bottom: 30px;
+      label{
+        span{
+          margin-left: 10px;
+          padding: 6px 10px;
           border-radius: 5px;
-          padding: 3px 15px;
+          background-color: #FFDE3B;
+          font-size: 12px;
+          font-weight: 900;
+        }
+      }
+      input{
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 0 8px 10px;
+        border: 1px solid #D6D6D6;
+        border-radius: 5px;
+      }
+      p{
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      textarea{
+        width: 850px;
+        height: 120px;
+        margin-top: 10px;
+        padding: 8px 0 8px 10px;
+        border: 1px solid #D6D6D6;
+        border-radius: 5px;
+      }
+    }
+    .image-field{
+      margin-bottom: 20px;
+      label{
+        span{
+          margin-left: 10px;
+          padding: 6px 10px;
+          border-radius: 5px;
+          background-color: #FFDE3B;
+          font-size: 12px;
+          font-weight: 900;
+        }
+      }
+      .image-file{
+        display: inline-block;
+        width: 100%;
+        padding: 35px 6px;
+        margin-top: 10px;
+        border: 1px solid #D6D6D6;
+        border-radius: 5px;
+        cursor: pointer;
+        p{
+          text-align: center;
+          font-size: 16px;
+        }
+        .hidden{
+          display: none;
+        }
+      }
+      p{
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      .image-file:hover{
+        transition: 0.3s;
+        background-color: #F8F8F8;
+      }
+    }
+    .nested-fields:first-child{
+      border-top: 1px dotted #333;
+    }
+    .nested-fields{
+      border-bottom: 1px dotted #333;
+      padding: 30px 0;
+      .notice_hash{
+        margin-bottom: 30px;
+        label{
           span{
+            margin-left: 10px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background-color: #FFDE3B;
             font-size: 12px;
             font-weight: 900;
           }
         }
-      }
-    }
-      .news_title_box{
-        padding: 10px;
-        border: 1px solid #D6D6D6;
-        border-radius: 5px;
-        margin-top: 15px;
-        #notice_notice_title{
-          width: 1190px;
+        .item_select{
+          width: 280px;
+          margin-top: 10px;
+          padding: 8px 0 8px 10px;
+          border: 1px solid #D6D6D6;
+          border-radius: 5px;
         }
-      }
-      .news_title_quaternary{
-        margin-top: 8px;
-        p{
-          font-size: 12px;
-          color: #333;
-        }
-      }
-    .news_thumbnail_primary{
-      display: flex;
-      padding-top: 30px;
-      .news_thumbnail_secondary{
-        margin-right: 11px;
-        margin-top: 3px;
-        h3{
-          font-size: 18px;
-          font-weight: 900;
-        }
-      }
-      .news_common{
-        width: 54px;
-        background-color: #FFDE3B;
-        border-radius: 5px;
-        padding: 3px 15px;
-        span{
-          font-size: 12px;
-          font-weight: 900;
-        }
-      }
-    }
-    .news_thumbnail_box{
-      height: 136px;
-      border: 1px solid #D6D6D6;
-      background-color:#F8F8F8;
-      border-radius: 5px;
-      position: relative;
-      margin-top: 15px;
-      h3{
-        font-size: 18px;
-        font-weight: 0;
-        text-align: center;
-        padding-top: 32px;
-      }
-      #notice_thumbnail{
-        font-size: 14px;
-        position: absolute;
-        top: 68px;
-        left: 535px;
-      }
-    }
-    .news_display_radio{
-      display: flex;
-      margin: 15px 0 30px 0;
-      .news_display_radio_true{
-        display: flex;
-        align-items: center;
         input{
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
-        label{
-          font-size: 16px;
+          width: 850px;
+          margin-top: 10px;
+          padding: 8px 0 8px 10px;
+          border: 1px solid #D6D6D6;
+          border-radius: 5px;
         }
       }
-      .news_display_radio_false{
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
-        input{
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
-        label{
-          font-size: 16px;
+      .notice_remove{
+        width: 120px;
+        margin: 0 0 0 auto;
+        .remove_fields{
+          padding: 10px 43px;
+          border: 1px solid #888;
+          border-radius: 5px;
         }
       }
     }
-    .heading{
-      border-top: 1px dotted #333;
-    }
-    #notice_image{
-      font-size: 14px;
-      position: absolute;
-      top: 68px;
-      left: 535px;
-    }
-    .description{
-      border-bottom: 1px dotted #333;
-      .primary{
-        margin-bottom: 95px;
-        #notice_notice_description{
-          width: 1190px;
-          height: 180px;
-        }
-      }
-    }
-    .news_btn{
-      margin: 100px auto 0;
-      width: 270px;
-      input{
-        text-align: center;
-        border-radius: 30px;
+    .notice_add{
+      width: 160px;
+      margin: 30px 0 0 auto;
+      .add_fields{
+        padding: 10px 63px;
+        background-color: #FF9D30;
         border: 1px solid #FF9D30;
-        color: #FF9D30;
-        padding: 15px 0;
+        border-radius: 5px;
+        color: #fff;
+      }
+    }
+    .notice_form_action{
+      margin-top: 60px;
+      text-align: center;
+      input{
         width: 270px;
+        padding: 15px 0;
+        border: 1px solid #FF9D30;
+        border-radius: 30px;
+        color: #FF9D30;
       }
       input:hover{
         background-color: #FF9D30;
@@ -258,7 +252,7 @@
   }
 }
 
-//ニュース詳細
+/* お知らせ詳細 */
 #notice_show{
   width: 1200px;
   margin: 80px auto;
