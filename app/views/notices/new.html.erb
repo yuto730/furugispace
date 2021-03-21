@@ -15,7 +15,7 @@
       <label class="image-file">
         <p>画像を登録</p>
         <%= f.file_field :thumbnail, class: 'hidden' %>
-        <div id="image-preview">
+        <div id="thumbnail-preview">
           <% if @notice.thumbnail.attached? %>
             <%= image_tag @notice.thumbnail.variant(resize_to_fill: [80, 80]).processed %>
           <% end %>
