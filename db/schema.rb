@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_090813) do
+ActiveRecord::Schema.define(version: 2021_03_21_050256) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -112,11 +112,18 @@ ActiveRecord::Schema.define(version: 2021_03_14_090813) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notice_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "notice_id", null: false
+    t.string "notice_heading", null: false
+    t.text "notice_description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["notice_id"], name: "index_notice_details_on_notice_id"
+  end
+
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "notice_title", null: false
     t.boolean "notice_display", default: true, null: false
-    t.string "notice_heading", null: false
-    t.text "notice_description", null: false
     t.bigint "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -174,6 +181,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_090813) do
   add_foreign_key "events", "stores"
   add_foreign_key "messages", "communities"
   add_foreign_key "messages", "users"
+  add_foreign_key "notice_details", "notices"
   add_foreign_key "notices", "stores"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "relationships", "users", column: "following_id"

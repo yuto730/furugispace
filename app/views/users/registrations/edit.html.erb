@@ -37,9 +37,12 @@
         <label class="image-file">
           <p>画像を登録</p>
           <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: 'hidden' %>
+          <div id="avatar-preview">
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar.variant(resize_to_fill: [80, 80]).processed %>
+            <% end %>
+          </div>
         </label>
-        <%# <label>アイコン画像</label> %>
-        <%#= f.file_field :avatar, autofocus: true, autocomplete: "avatar" %>
       </div>
 
       <div class="field">

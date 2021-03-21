@@ -1,110 +1,56 @@
 <%= render "shared/header" %>
 
-<div id="news_post">
-  <h2>・・・・古着ニュース・・・・</h2>
+<div id="notice_form">
+  <h2>ニュースを作成</h2>
   <%= form_with(model: @notice, local: true) do |f| %>
-    <%#----- ニュースタイトル入力フォーム----- %>
-    <div class="news_title_main">
-      <div class="news_title_primary">
-        <div class="news_title_secondary">
-          <h3>タイトル</h3>
-        </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_title_box">
-        <%= f.text_field :notice_title,  placeholder: "タイトル20字以内",maxlength:"20" %>
-      </div>
-      <div class="news_title_quaternary">
-        <p>一覧画面に掲載されます。</p>
-      </div>
+
+    <div class="notice_form_field">
+      <label>タイトル<span>必須</span></label><br>
+      <%= f.text_field :notice_title %>
+      <p>一覧画面に掲載されます。</p>
     </div>
-    <%#---ニュースサムネイル画像登録フォーム---%>
-    <div class="news_thumbnail_main">
-      <div class="news_thumbnail_primary">
-        <div class="news_thumbnail_secondary">
-          <h3>サムネイル画像</h3>
+
+    <div class="image-field">
+      <label>サムネイル画像<span>必須</span></label><br>
+      <label class="image-file">
+        <p>画像を登録</p>
+        <%= f.file_field :thumbnail, class: 'hidden' %>
+        <div id="thumbnail-preview">
+          <% if @notice.thumbnail.attached? %>
+            <%= image_tag @notice.thumbnail.variant(resize_to_fill: [80, 80]).processed %>
+          <% end %>
         </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_thumbnail_box">
-        <h3>画像を登録</h3>
-        <%= f.file_field :thumbnail %>
-      </div>
-      <div class="news_title_quaternary">
-        <p>一覧画面に掲載されます。</p>
-      </div>
+      </label>
+      <p>一覧画面に掲載されます。</p>
     </div>
-    <%# ---表示/非表示---%>
-    <div class="new_thumbnail_main">
-      <div class="news_thumbnail_primary">
-        <div class="news_thumbnail_secondary">
-          <h3>表示/非表示</h3>
-        </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_display_radio">
-        <div class="news_display_radio_true">
+
+    <div class="notice_form_field">
+      <label>表示/非表示<span>必須</span></label><br>
+      <div class="notice_display">
+        <div class="notice_display_true">
           <%= f.radio_button :notice_display, checked: true %>
           <%= f.label :notice_display,"表示",{value: :true}%>
         </div>
-        <div class="news_display_radio_false">
+        <div class="notice_display_false">
           <%= f.radio_button :notice_display, checked: false %>
           <%= f.label :notice_display,"非表示",{value: :false}%>
         </div>
       </div>
     </div>
-    <%# ---見出し--%>
-    <div class="news_title_main heading">
-      <div class="news_title_primary">
-        <div class="news_title_secondary">
-          <h3>見出し</h3>
-        </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_title_box">
-        <%= f.text_field :notice_heading%>
+
+    <div>
+      <%= f.fields_for :notice_details do |t| %>
+        <%= render "notices/notice_detail_fields", f: t %>
+      <% end %>
+      <div class="notice_add">
+        <%= link_to_add_association "追加", f, :notice_details %>
       </div>
     </div>
-    <%#---画像---%>
-    <div class="news_thumbnail_main">
-      <div class="news_thumbnail_primary">
-        <div class="news_thumbnail_secondary">
-          <h3>画像</h3>
-        </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_thumbnail_box">
-        <h3>画像を登録</h3>
-        <%= f.file_field :image %>
-      </div>
+
+    <div class="notice_form_action">
+      <%= f.submit "作成する" %>
     </div>
-    <%#---本文---%>
-    <div class="news_title_main description">
-      <div class="news_title_primary">
-        <div class="news_title_secondary">
-          <h3>本文</h3>
-        </div>
-        <div class="news_common">
-          <span>必須</span>
-        </div>
-      </div>
-      <div class="news_title_box primary">
-        <%= f.text_area :notice_description %>
-      </div>
-    </div>
-    <div class="news_btn">
-      <%= f.submit "投稿" %>
-    </div>
+
   <% end %>
 </div>
 
