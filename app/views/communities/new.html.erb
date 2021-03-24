@@ -14,9 +14,17 @@
       <%= f.text_area :community_profile %>
     </div>
 
-    <div class="community_form_field">
+    <div class="image-field">
       <label>サムネイル画像<span>必須</span></label><br>
-      <%= f.file_field :image, class: "community_img" %>
+      <label class="image-file">
+        <p>画像を登録</p>
+        <%= f.file_field :image, class: 'hidden' %>
+        <div id="image-preview">
+          <% if @community.image.attached? %>
+            <%= image_tag @community.image.variant(resize_to_fill: [80, 80]).processed %>
+          <% end %>
+        </div>
+      </label>
     </div>
 
     <div class="community_form_action">

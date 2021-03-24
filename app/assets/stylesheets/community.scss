@@ -141,6 +141,43 @@
         cursor: pointer;
       }
     }
+    .image-field{
+      margin-bottom: 20px;
+      label{
+        span{
+          margin-left: 10px;
+          padding: 6px 10px;
+          border-radius: 5px;
+          background-color: #FFDE3B;
+          font-size: 12px;
+          font-weight: 900;
+        }
+      }
+      .image-file{
+        display: inline-block;
+        width: 100%;
+        padding: 35px 6px;
+        margin-top: 10px;
+        border: 1px solid #D6D6D6;
+        border-radius: 5px;
+        cursor: pointer;
+        p{
+          text-align: center;
+          font-size: 16px;
+        }
+        .hidden{
+          display: none;
+        }
+      }
+      p{
+        margin-top: 8px;
+        font-size: 12px;
+      }
+      .image-file:hover{
+        transition: 0.3s;
+        background-color: #F8F8F8;
+      }
+    }
     .community_form_action{
       margin-top: 60px;
       text-align: center;
