@@ -32,9 +32,17 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
-      <div class="field" >
-        <label>アイコン画像</label>
-        <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar" %>
+      <div class="image-field">
+        <span>アイコン画像</span><br>
+        <label class="image-file">
+          <p>画像を登録</p>
+          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", class: 'hidden' %>
+          <div id="avatar-preview">
+            <% if @store.avatar.attached? %>
+              <%= image_tag @store.avatar.variant(resize_to_fill: [80, 80]).processed %>
+            <% end %>
+          </div>
+        </label>
       </div>
 
       <div class="field">
