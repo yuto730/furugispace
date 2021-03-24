@@ -25,7 +25,9 @@ class EventsController < ApplicationController
     @events = Event.order('created_at DESC')
   end
 
-  def edit; end
+  def edit
+    @event_details = @event.event_details.build
+  end
 
   def update
     if @event.update(event_params)

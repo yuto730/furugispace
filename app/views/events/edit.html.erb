@@ -10,9 +10,17 @@
       <p>一覧画面に掲載されます。</p>
     </div>
 
-    <div class="event_form_field">
+    <div class="image-field">
       <label>サムネイル画像<span>必須</span></label><br>
-      <%= f.file_field :thumbnail, class: "event_img" %>
+      <label class="image-file">
+        <p>画像を登録</p>
+        <%= f.file_field :thumbnail, class: 'hidden' %>
+        <div id="image-preview">
+          <% if @event.thumbnail.attached? %>
+            <%= image_tag @event.thumbnail.variant(resize_to_fill: [80, 80]).processed %>
+          <% end %>
+        </div>
+      </label>
       <p>一覧画面に掲載されます。</p>
     </div>
 

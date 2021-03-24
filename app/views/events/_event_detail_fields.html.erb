@@ -4,9 +4,17 @@
     <%= f.text_field :event_heading %>
   </div>
 
-  <div class="event_form_field">
+  <div class="image-field">
     <label>画像<span>必須</span></label><br>
-    <%= f.file_field :image, class: "event_img" %>
+    <label class="image-file">
+      <p>画像を登録</p>
+      <%= f.file_field :image, class: 'hidden' %>
+      <div id="image-preview">
+        <% if @event_details.image.attached? %>
+          <%= image_tag @event_details.image.variant(resize_to_fill: [80, 80]).processed %>
+        <% end %>
+      </div>
+    </label>
   </div>
 
   <div class="event_form_field">
