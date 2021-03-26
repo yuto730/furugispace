@@ -85,7 +85,8 @@
           <table>
             <% @coordination.coordination_items.each do |coordination| %>
             <tr>
-              <th><%= coordination.item_id %>：</th>
+              <th><%= Item.find(coordination.item_id).name %></th>
+              <td>：</td>
               <td><%= coordination.item_text %></td>
             </tr>
             <% end %>
